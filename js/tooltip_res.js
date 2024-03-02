@@ -29,7 +29,7 @@ function updateTooltipResHTML(start=false) {
         if (!start && hover_tooltip.id !== id+'_tooltip') continue;
 
         let tr_data = TOOLTIP_RES[id]
-        let tr = document.getElementById(id+'_tooltip')
+        let tr = tmp.el[id+'_tooltip']
 
         if (tr) tr.setTooltip(`<h3>[ ${tr_data.full} ]</h3>`+(tr_data.desc?"<br class='line'>"+tr_data.desc():""))
     }

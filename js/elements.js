@@ -6,12 +6,12 @@ function setupHTML() {
 	//document.getElementById("test").textContent = "No!"
 	
 
-	/*tmp.el = {}
+	tmp.el = {}
 	let all = document.getElementsByTagName("*")
 	for (let i=0;i<all.length;i++) {
 		let x = all[i]
 		tmp.el[x.id] = new Element(x)
-	}*/
+	}
 
 	setupResourcesHTML()
     
@@ -32,4 +32,5 @@ function updateHTML() {
 	
 
 	updateResourcesHTML()
+	tmp.el.app.setDisplay(true)
 }
