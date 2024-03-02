@@ -17,8 +17,6 @@ const RESOURCES_DIS = {
     
         resetBtn() { FORMS.rp.reset() }
     },
-
-   
 }
 
 function reset_res_btn(id) { RESOURCES_DIS[id].resetBtn() }
