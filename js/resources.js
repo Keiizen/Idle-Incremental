@@ -24,7 +24,7 @@ function reset_res_btn(id) { RESOURCES_DIS[id].resetBtn() }
 
 function setupResourcesHTML() {
     let h1 = ""
-
+    let nil = ""
     for (i in RESOURCES_DIS) {
         let rd = RESOURCES_DIS[i]
 
@@ -36,7 +36,8 @@ function setupResourcesHTML() {
         
         `
         let resd = document.createElement("div")
-        resd.setAttribute("class", rd.class ? rd.class : "")
+        resd.setAttribute("class", `${rd.class ? rd.class : nil}`)
+        //resd.setAttribute()
         resd.id = `${i}_res_div`
         resd.innerHTML = h1
         document.getElementById("resources_table").appendChild(resd)
