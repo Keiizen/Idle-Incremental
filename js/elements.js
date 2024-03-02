@@ -28,7 +28,7 @@ function updateHTML() {
 	tmp.mobile = window.innerWidth < 1200
 
 	 
-
+	if (hover_tooltip) updateTooltipResHTML()
 	
 
 	updateResourcesHTML()

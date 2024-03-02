@@ -1,6 +1,6 @@
 const TOOLTIP_RES = {
     stellarity: {
-        full: "Stellaritu",
+        full: "Stellarity",
         desc() {
             let h = `You have acquired <b>${format(player.stellarity)}</b> Stellarity.`
 
