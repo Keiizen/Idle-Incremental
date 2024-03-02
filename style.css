@@ -132,7 +132,7 @@ button {
 #resources_table {
 	display: flex;
 	flex-flow: column wrap;
-	align-content: start;
+	align-content: end;
 	justify-content: start;
 	width: calc(100% - 50px);
 	min-height: 110px;

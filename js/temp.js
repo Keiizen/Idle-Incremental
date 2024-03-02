@@ -31,7 +31,7 @@ function resetTemp() {
        
 
         prevSave: "",
-
+        totalPoints: E(0)
        
     }
 

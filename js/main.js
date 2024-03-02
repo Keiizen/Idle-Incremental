@@ -64,7 +64,7 @@ function turnOffline() {
 player.offline.active = !player.offline.active}
 
 function format(ex, acc=4, max=12, type=player.options.notation) {
-    if (tmp.aprilEnabled && Math.random() < .9) return "Troll"
+    
 
     ex = E(ex)
     neg = ex.lt(0)?"-":""
