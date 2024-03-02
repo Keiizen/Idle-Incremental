@@ -19,11 +19,11 @@ Decimal.prototype.format = function (acc=4, max=12) { return format(this.clone()
 Decimal.prototype.formatGain = function (gain, mass=false) { return formatGain(this.clone(), gain, mass) }
 
 function calc(dt) {
-    let du_gs = tmp.preQUGlobalSpeed.mul(dt)
-    let inf_gs = tmp.preInfGlobalSpeed.mul(dt)
+    let gs = tmp.gs.mul(dt)
+
 
     if (tmp.pass<=0) {
-        player.mass = player.mass.add(tmp.massGain.mul(dt))
+        player.points = player.points.add(tmp.pointGain.mul(gs))
        
     }
 
@@ -47,7 +47,7 @@ function getPlayerData() {
             notation: 'standard',
             massDis: 0,
 
-            nav_hide: [true, false]
+            nav_hide: []
         },
         confirms: {},
         offline: {

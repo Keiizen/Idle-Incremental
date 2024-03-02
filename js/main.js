@@ -34,12 +34,13 @@ const FORMS = {
         },
         reset() {
             if (tmp.rp.csn) {
-                this.doReset()
+                FORMS.rp.doReset()
+                player.rp.unl = true
             }
         },
         doReset() {
            player.Points=E(0)
-           player.rp.points = playrr.rp.points.add(tmp.rp.gain)
+           player.rp.points = player.rp.points.add(tmp.rp.gain)
         }
     },
     gameSpeed() {
