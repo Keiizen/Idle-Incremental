@@ -29,14 +29,15 @@ function setupResourcesHTML() {
         let rd = RESOURCES_DIS[i]
 
         h1 += `
-            <div id="${i}_res_div">
+        
                 <span style="margin-right: 5px; text-align: right;" id="${i}_res_desc">X</span>
                 <div><img src="images/${rd.icon||"empty"}.png" ${rd.resetBtn ? `onclick="reset_res_btn('${i}')" style="cursor: pointer;"` : ""}></div>
-            </div>
+            
         
         `
         let resd = document.createElement("div")
         resd.setAttribute("class", rd.class ? rd.class : "")
+        resd.id = `${i}_res_div`
         resd.innerHTML = h1
         document.getElementById("resources_table").appendChild(resd)
     }
@@ -55,7 +56,7 @@ function updateResourcesHTML() {
         document.getElementById(i+"_res_div").style.display = unl ? "block" : "none"
 
         if (unl) {
-            document.getElementById(i*"_res_desc").innerHTML = " [ <b><i> " + rd.title + " </i></b>] " + rd.desc(gs)
+            document.getElementById(i*"_res_desc").innerHTML = " [ <b><i> " + rd.title + " </i></b>]<br>" + rd.desc(gs)
         }
     }
 }
