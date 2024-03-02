@@ -1,20 +1,20 @@
 const RESOURCES_DIS = {
     points: {
-        title: "Points",
+        title: "[ <b><i> Points </i></b> ]",
         unl: () => true,
         icon: "empty",
 
         desc: (gs)=>format(player.points)+"<br>"+formatGain(player.points, tmp.pointGain.mul(gs)),
     },
     rp: {
-        title: "Rage Powers",
+        title: "[ <b><i> Rage Powers </i></b> ]",
         unl: () => true,
         icon: "empty",
         class: "red",
 
         desc: (gs)=>format(player.rp.points)+"<br>"+"(+"+format(tmp.rp.gain,0)+")",
     
-        resetBtn() { FORMS.rp.reset() },
+        resetBtn() { FORMS.rp.reset() }
     },
 
    
@@ -28,9 +28,9 @@ function setupResourcesHTML() {
     for (i in RESOURCES_DIS) {
         let rd = RESOURCES_DIS[i]
 
-        h1 += `
+        h1 = `
         
-                <span style="margin-right: 5px; text-align: right;" id="${i}_res_desc">${rd.desc}</span>
+                <span style="margin-right: 5px; text-align: right;" id="${i}_res_desc">${rd.desc(tmp.gs)}</span>
                 <div><img src="images/${rd.icon||"empty"}.png" ${rd.resetBtn ? `onclick="reset_res_btn('${i}')" style="cursor: pointer;"` : ""}></div>
             
         
@@ -59,7 +59,7 @@ function updateResourcesHTML() {
         document.getElementById(i+"_res_div").style.display = unl ? "block" : "none"
 
         if (unl) {
-            document.getElementById(i*"_res_desc").innerHTML = " [ <b><i> " + rd.title + " </i></b>]<br>" + rd.desc(gs)
+            document.getElementById(i*"_res_desc").innerHTML = rd.title + "<br>" + rd.desc(gs)
         }
     }
 }
