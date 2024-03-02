@@ -20,7 +20,7 @@ const ST_NAMES = [
 
 const FORMS = {
    
-   pointGain() {
+   stellarityGain() {
     let x = E(1)
 
     return x
@@ -28,24 +28,24 @@ const FORMS = {
     rp: {
         gain() {
            
-            let gain = player.mass.div(1e15).root(3)
+            let gain = player.stellarity.div(1e15).root(2)
            
             return gain.floor()
         },
         reset() {
-            if (tmp.rp.csn) {
+            if (tmp.rp.can) {
                 FORMS.rp.doReset()
                 player.rp.unl = true
             }
         },
         doReset() {
-           player.Points=E(0)
+           player.stellarity=E(0)
            player.rp.points = player.rp.points.add(tmp.rp.gain)
         }
     },
     gameSpeed() {
         let gs = E(1)
-        if (player.points.gte(10)) gs = gs.add(player.points.log(10))
+        if (player.stellarity.gte(10)) gs = gs.add(player.stellarity.log(10))
         return gs
     }
   }
@@ -222,8 +222,6 @@ function capitalFirst(str) {
 
 
 setInterval(()=>{
-    player.points = player.points.add(tmp.pointGain.mul(tmp.gs))
-    if (player.points.gt(tmp.totalPoints)) {
-        tmp.totalPoints = player.points
-    }
+    player.stellarity = player.stellarity.add(tmp.stellarityGain.mul(tmp.gs))
+    
 })

@@ -37,7 +37,7 @@ Decimal.prototype.formatGain = function (gain, mass=false) { return formatGain(t
 
 function getPlayerData() {
     let s = {
-       points: E(0),
+       stellarity: E(0),
         rp: {
             points: E(0),
             unl: false,

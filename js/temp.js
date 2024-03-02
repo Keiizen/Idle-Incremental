@@ -31,7 +31,6 @@ function resetTemp() {
        
 
         prevSave: "",
-        totalPoints: E(0)
        
     }
 
@@ -40,7 +39,6 @@ function resetTemp() {
     tmp.el = keep[0]
     tmp.prevSave = keep[1]
     tmp.notify = {}
-    tmp.pointGain = FORMS.pointGain()
 }
 
 function updateRagePowerTemp() {
@@ -49,8 +47,8 @@ function updateRagePowerTemp() {
     tmp.rp.can = tmp.rp.gain.gte(1)
 }
 
-function updatePointTemp() {
-tmp.pointGain = FORMS.pointGain()
+function updateStellarityTemp() {
+tmp.stellarityGain = FORMS.stellarityGain()
 }
 function updateGamespeedTemp() {
     tmp.gs = FORMS.gameSpeed() 
@@ -59,7 +57,7 @@ function updateTemp() {
     tmp.offlineActive = player.offline.time > 1
     tmp.offlineMult = tmp.offlineActive?player.offline.time+1:1
     updateGamespeedTemp()
-    updatePointTemp()
+    updateStellarityTemp()
    updateRagePowerTemp()
    
 }
