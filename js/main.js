@@ -52,10 +52,10 @@ const FORMS = {
 
 function loop() {
     diff = Date.now()-date;
-    ssf[1]()
+    //ssf[1]()
     updateTemp()
     updateHTML()
-    calc(diff/1000);
+    //calc(diff/1000);
     date = Date.now();
     player.offline.current = date
 }
