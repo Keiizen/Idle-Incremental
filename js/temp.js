@@ -1,4 +1,6 @@
-var tmp = {}
+var tmp = {
+    start: false
+}
 
 function resetTemp() {
     let d = new Date()
@@ -38,7 +40,7 @@ function resetTemp() {
     tmp.el = keep[0]
     tmp.prevSave = keep[1]
     tmp.notify = {}
-   
+    tmp.start = false
     tmp.pointGain = FORMS.pointGain()
 }
 
