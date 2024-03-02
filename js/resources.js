@@ -20,18 +20,19 @@ const RESOURCES_DIS = {
 }
 
 function reset_res_btn(id) { RESOURCES_DIS[id].resetBtn() }
-
 function setupResourcesHTML() {
-    let h1 = ""
     let nil = ""
+    let h1 = ""
     for (i in RESOURCES_DIS) {
         let rd = RESOURCES_DIS[i]
 
         h1 += `
         <div id="${i}_res_div">
-            <div>${rd.title}</div>
-            <span style="margin-right: 5px; text-align: right;" id="${i}_res_desc">x</span>
-            <div><img src="images/${rd.icon||"empty"}.png" ${rd.resetBtn ? `onclick="reset_res_btn('${i}')" style="cursor: pointer;"` : ""}></div>
+            <div class="${rd.class||""}">
+                <div>${rd.title}</div>
+                <span style="margin-right: 5px; text-align: right;" id="${i}_res_desc">x</span>
+                <div><img src="images/${rd.icon||"empty"}.png" ${rd.resetBtn ? `onclick="reset_res_btn('${i}')" style="cursor: pointer;"` : ""}></div>
+            </div>
         </div>`
     }
     document.getElementById("resources_table").innerHTML = h1
@@ -42,7 +43,7 @@ function updateResourcesHTML() {
     for (i in RESOURCES_DIS) {
         let rd = RESOURCES_DIS
         document.getElementById(`${i}_res_div`).style.display = rd.unl() ? "block" : "none"
-        document.getElementById(`${i}_res_desc`) = rd.desc(gs)
+        document.getElementById(`${i}_res_desc`) = " " + rd.desc(gs)
     }
 }
     
