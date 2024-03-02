@@ -1,5 +1,5 @@
 var tmp = {
-    start: false
+    
 }
 
 function resetTemp() {
