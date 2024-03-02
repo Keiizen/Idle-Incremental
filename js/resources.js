@@ -13,7 +13,7 @@ const RESOURCES_DIS = {
         icon: "rp",
         class: "red",
 
-        desc: (gs)=>format(player.rp.points)+"<br>"+"(+"+format(tmp.rp.gain,0)+")",
+        desc: (gs)=>format(player.rp.points)+"<br>"+"(+"+format(tmp.rp.gain)+")",
     
         resetBtn() { FORMS.rp.reset() }
     },
@@ -28,9 +28,9 @@ function setupResourcesHTML() {
 
         h1 += `
         <div id="${i}_res_div">
-            <div class="${rd.class||""}">
+            <div class=${rd.class||""}>
                 <div>${rd.title}</div>
-                <span style="margin-right: 5px; text-align: right;" id="${i}_res_desc">x</span>
+                <span style="margin-right: 5px; text-align: right;" id="${i}_res_desc"> x</span>
                 <div><img src="images/${rd.icon||"empty"}.png" ${rd.resetBtn ? `onclick="reset_res_btn('${i}')" style="cursor: pointer;"` : ""}></div>
             </div>
         </div>`
@@ -42,7 +42,11 @@ function updateResourcesHTML() {
     let gs = tmp.gs
     for (i in RESOURCES_DIS) {
         let rd = RESOURCES_DIS
-        document.getElementById(`${i}_res_div`).style.display = rd.unl() ? "block" : "none"
+        let unl = rd.unl()
+        if (!unl) {
+            document.getElementById(`${i}_res_div`).style.display = "none"
+        } else document.getElementById(`${i}_res_div`).style.display = "block"
+        //document.getElementById(`${i}_res_div`).style.display = rd.unl() ? "block" : "none"
         document.getElementById(`${i}_res_desc`) = " " + rd.desc(gs)
     }
 }
