@@ -35,12 +35,14 @@ function setupResourcesHTML() {
             
         
         `
+        if (!document.getElementById(`${i}_res_div`)) {
         let resd = document.createElement("div")
         resd.setAttribute("class", `${rd.class ? rd.class : nil}`)
         //resd.setAttribute()
         resd.id = `${i}_res_div`
         resd.innerHTML = h1
         document.getElementById("resources_table").appendChild(resd)
+        }
     }
     
     
