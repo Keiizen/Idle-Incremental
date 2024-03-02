@@ -40,7 +40,6 @@ function resetTemp() {
     tmp.el = keep[0]
     tmp.prevSave = keep[1]
     tmp.notify = {}
-    tmp.start = false
     tmp.pointGain = FORMS.pointGain()
 }
 

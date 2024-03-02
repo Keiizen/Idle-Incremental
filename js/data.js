@@ -18,7 +18,7 @@ Decimal.prototype.format = function (acc=4, max=12) { return format(this.clone()
 
 Decimal.prototype.formatGain = function (gain, mass=false) { return formatGain(this.clone(), gain, mass) }
 
-/*function calc(dt) {
+function calc(dt) {
     let gs = tmp.gs.mul(dt)
 
 
@@ -33,7 +33,7 @@ Decimal.prototype.formatGain = function (gain, mass=false) { return formatGain(t
 
    
     
-}*/
+}
 
 function getPlayerData() {
     let s = {
@@ -162,8 +162,8 @@ function loadGame(start=true, gotNaN=false) {
 
         updateHTML()
 
-        /*let t = (Date.now() - player.offline.current)/1000
-        if (player.offline.active && t > 60) simulateTime(t)*/
+        let t = (Date.now() - player.offline.current)/1000
+        if (player.offline.active && t > 60) simulateTime(t)
 
         updateTooltipResHTML(true)
        
@@ -223,7 +223,7 @@ Decimal.prototype.addTP = function (val) {
     var e = this.clone()
     return Decimal.tetrate(10, e.slog(10).add(val))
 }
-/*function simulateTime(sec) {
+function simulateTime(sec) {
     let ticks = sec * FPS
     let bonusDiff = 0
     let player_before = clonePlayer(player,getPlayerData());
@@ -250,7 +250,7 @@ Decimal.prototype.addTP = function (val) {
     // console.log(s2)
 
     if (s2.points.gte(10)) h += `<br>Your points' exponent<sup>2</sup> is increased by <b>${s2.points.format(2)}</b>.`
-    else if (s.points.gte(10)) h += `<br>Your points' exponent is increased by <b>${s.points.format(2)}</b>.`
+    else if (s.points.gte(10)) h += `<br>Your points increased by <b>${s.points.format(2)}</b>.`
 
     createPopup(h,'offline')
-}*/
+}
