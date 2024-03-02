@@ -1,6 +1,6 @@
 const RESOURCES_DIS = {
     stellarity: {
-        title: "[ <b><i> Stellarity </i></b> ]",
+        title: "[ <i> Stellarity </i> ] ",
         unl: () => true,
         icon: "stars",
         class: "magenta",
@@ -41,13 +41,12 @@ function setupResourcesHTML() {
 function updateResourcesHTML() {
     let gs = tmp.gs
     for (i in RESOURCES_DIS) {
-        let rd = RESOURCES_DIS
+        let rd = RESOURCES_DIS[i]
         let unl = rd.unl()
-        if (!unl) {
-            document.getElementById(`${i}_res_div`).style.display = "none"
-        } else document.getElementById(`${i}_res_div`).style.display = "block"
-        //document.getElementById(`${i}_res_div`).style.display = rd.unl() ? "block" : "none"
-        document.getElementById(`${i}_res_desc`).innerHTML = " " + rd.desc(gs)
+        
+        document.getElementById(`${i}_res_div`).style.display = unl ? "block" : "none"
+
+        document.getElementById(`${i}_res_desc`).innerHTML = rd.desc(gs)
     }
 }
     
