@@ -27,7 +27,7 @@ function setupResourcesHTML() {
 
         h1 += `
         <div id="${i}_res_div">
-            <div class=${rd.class||""}>
+        <div ${i in TOOLTIP_RES ? `id="${i}_tooltip" class="tooltip ${rd.class||""}" tooltip-pos="left" tooltip-align="left" tooltip-text-align="left"` : `class="${rd.class||""}"`}>
                 <span style="margin-right: 5px; text-align: right;" id="${i}_res_desc"> x</span>
                 <div><img src="images/${rd.icon||"empty"}.png" ${rd.resetBtn ? `onclick="reset_res_btn('${i}')" style="cursor: pointer;"` : ""}></div>
             </div>
