@@ -1,5 +1,5 @@
 const TOOLTIP_RES = {
-    points: {
+    /*points: {
         full: "Points",
         desc() {
             let h = `You have acquired <b>${format(player.Points)}</b> Points.`
@@ -20,7 +20,7 @@ const TOOLTIP_RES = {
 
             return h
         },
-    },
+    },*/
    
 }
 
