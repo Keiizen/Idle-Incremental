@@ -1,6 +1,5 @@
 const RESOURCES_DIS = {
     stellarity: {
-        title: "[ <i> Stellarity </i> ] ",
         unl: () => true,
         icon: "stars",
         class: "magenta",
@@ -29,7 +28,6 @@ function setupResourcesHTML() {
         h1 += `
         <div id="${i}_res_div">
             <div class=${rd.class||""}>
-                <div>${rd.title}</div>
                 <span style="margin-right: 5px; text-align: right;" id="${i}_res_desc"> x</span>
                 <div><img src="images/${rd.icon||"empty"}.png" ${rd.resetBtn ? `onclick="reset_res_btn('${i}')" style="cursor: pointer;"` : ""}></div>
             </div>
