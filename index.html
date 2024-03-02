@@ -15,9 +15,14 @@
         <script src="js/main.js"></script>
         <script src="js/formats.js"></script>
         <script src="js/notifications.js"></script>
+        <script src="js/iconify-icon.min.js"></script>
     </head>
     <body onload="loadGame()">
-        <div id="app">
+        <div id="loading">
+            <div style="font-size: 13px;">Idle Incremental</div>
+            <div style="font-size: 10px;">Loading...</div>
+        </div>
+        <div id="app" style="display: none;">
             <div id="notify" clsss="hide"></div>
             <div id="popups"></div>
             <div id="tooltip-div"></div>

@@ -1,7 +1,7 @@
 function setupHTML() {
 	
 	
-	setupResourcesHTML()
+	
 	
 	//document.getElementById("test").textContent = "No!"
 	
@@ -13,6 +13,7 @@ function setupHTML() {
 		tmp.el[x.id] = new Element(x)
 	}
 
+	setupResourcesHTML()
     
 }
 
@@ -28,7 +29,7 @@ function updateHTML() {
 
 	let displayMainTab = true
 	
-
+	tmp.el.loading.setDisplay(!tmp.start)
     tmp.el.app.setDisplay(tmp.start && displayMainTab)
 	
 
