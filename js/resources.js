@@ -55,7 +55,7 @@ function updateResourcesHTML() {
         document.getElementById(i+"_res_div").style.display = unl ? "block" : "none"
 
         if (unl) {
-            document.getElementById(i*"_res_desc").innerHTML = " [ <b><i> " + title.name + " </i></b>] " + rd.desc(gs)
+            document.getElementById(i*"_res_desc").innerHTML = " [ <b><i> " + rd.title + " </i></b>] " + rd.desc(gs)
         }
     }
 }
