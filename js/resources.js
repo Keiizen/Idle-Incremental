@@ -37,7 +37,7 @@ function setupResourcesHTML() {
         `
         let resd = document.createElement("div")
         resd.setAttribute("class", rd.class ? rd.class : "")
-        resd.innerHTML = 
+        resd.innerHTML = h1
         document.getElementById("resources_table").appendChild(resd)
     }
     
