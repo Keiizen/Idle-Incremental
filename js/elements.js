@@ -28,11 +28,11 @@ function updateHTML() {
 	tmp.mobile = window.innerWidth < 1200
 
 	if (!game.loaded) {
-		document.getElementById("losding").style.display = "block"
-		document.getElementById("app").style.display = "none"
-	} else {
-		document.getElementById("loading").style.display = "none"
-		document.getElementById("app").style.display = "block"
+		document.getElementById("losding").style.display = "block";
+		document.getElementById("app").style.display = "none";
+	} else if (game.loaded) {
+		document.getElementById("loading").style.display = "none";
+		document.getElementById("app").style.display = "block";
 	}
 	
 
