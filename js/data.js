@@ -173,7 +173,7 @@ function loadGame(start=true, gotNaN=false) {
        
         
        
-       detInterval(loop, 1000/FPS)
+       setInterval(loop, 1000/FPS)
        
         setInterval(checkNaN,1000)
        
