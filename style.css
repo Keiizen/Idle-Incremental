@@ -1,8 +1,6 @@
 
 
-p {
-	line-height: 0.6;
-}
+
 
 body {
     color: white;
@@ -131,7 +129,7 @@ button {
 	font-size: 12px;
 }
 
-#resoirces_table {
+#resources_table {
 	display: flex;
 	flex-flow: column wrap;
 	align-content: start;
