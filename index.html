@@ -12,6 +12,8 @@
         <script src="js/main.js"></script>
         <script src="js/formats.js"></script>
         <script src="js/iconify-icon.min.js"></script>
+        <script src="js/tooltips.js"></script>
+        <script src="js/tooltip_res.js"></script>
     </head>
     <body onload="loadGame()">
         <div id="loading" style="display: none">
@@ -19,9 +21,10 @@
             <div style="font-size: 14px;">Loading...</div>
         </div>
         <div id="app">
-            <button onclick="wipe()" class="yellow">!CLICK TO RESET YOUR DATA. THERE IS NO CONFIRMATION!<br><br></button>
+            <button onclick="wipe()" class="yellow">reset your data<br><br></button>
             <div id="notify" class="hide"></div>
             <div id="popups"></div> 
+            <div id="tooltip-div"></div>
             <div id="resources_table"></div>
         </div>
     </body>
