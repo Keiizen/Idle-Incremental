@@ -27,11 +27,10 @@ function updateHTML() {
 
 	tmp.mobile = window.innerWidth < 1200
 
-	let displayMainTab = true
+	
 	
 
 	
 
 	updateResourcesHTML()
-	if (hover_tooltip) updateTooltipResHTML()
 }
