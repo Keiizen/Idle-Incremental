@@ -52,7 +52,7 @@ function updateResourcesHTML() {
         document.getElementById(i+"_res_div").style.display = unl ? "block" : "none"
 
         if (unl) {
-            document.getElementById(+"_res_desc").innerHTML = rd.desc(gs)
+            document.getElementById(i*"_res_desc").innerHTML = rd.desc(gs)
         }
     }
 }
