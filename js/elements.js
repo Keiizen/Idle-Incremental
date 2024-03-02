@@ -3,8 +3,7 @@ function setupHTML() {
 	
 	setupResourcesHTML()
 	
-	
-
+	document.getElementById("test").textContent = "No!"
 	
 
 	tmp.el = {}
