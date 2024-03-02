@@ -153,14 +153,14 @@ function loadGame(start=true, gotNaN=false) {
     load(tmp.prevSave)
     
     if (start) {
-        //setupHTML()
+        setupHTML()
     
        
 
         setInterval(save,15000)
-        for (let x = 0; x < 5; x++) //updateTemp()
+        for (let x = 0; x < 5; x++) updateTemp()
 
-        //updateHTML()
+        updateHTML()
 
         /*let t = (Date.now() - player.offline.current)/1000
         if (player.offline.active && t > 60) simulateTime(t)*/
@@ -171,7 +171,7 @@ function loadGame(start=true, gotNaN=false) {
        
         
        
-       // setInterval(loop, 1000/FPS)
+       detInterval(loop, 1000/FPS)
        
         setInterval(checkNaN,1000)
        
