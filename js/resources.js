@@ -3,7 +3,7 @@ const RESOURCES_DIS = {
         title: "[ <b><i> Stellarity </i></b> ]",
         unl: () => true,
         icon: "stars",
-        class: "pink",
+        class: "magenta",
 
         desc: (gs)=>format(player.stellarity)+"<br>"+formatGain(player.stellarity, tmp.stellarityGain.mul(gs)),
     },
