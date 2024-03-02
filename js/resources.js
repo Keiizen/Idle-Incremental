@@ -38,7 +38,7 @@ function setupResourcesHTML() {
        
     }
     
-    new Element("resources_table").setHTML(h1)
+    document.getElementById("resources_table").innerHTML = h1
 }
 
 function updateResourcesHTML() {
@@ -49,10 +49,10 @@ function updateResourcesHTML() {
         let rd = RESOURCES_DIS[i]
         let unl =  rd.unl()
 
-        tmp.el[i+"_res_div"].setDisplay(unl)
+        document.getElementById(i+"_res_div").style.display = unl ? "block" : "none"
 
         if (unl) {
-            tmp.el[i+"_res_desc"].setHTML(rd.desc(gs))
+            document.getElementById(+"_res_desc").innerHTML = rd.desc(gs)
         }
     }
 }
