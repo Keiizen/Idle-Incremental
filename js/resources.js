@@ -30,7 +30,7 @@ function setupResourcesHTML() {
 
         h1 += `
         
-                <span style="margin-right: 5px; text-align: right;" id="${i}_res_desc">X</span>
+                <span style="margin-right: 5px; text-align: right;" id="${i}_res_desc">${rd.desc}</span>
                 <div><img src="images/${rd.icon||"empty"}.png" ${rd.resetBtn ? `onclick="reset_res_btn('${i}')" style="cursor: pointer;"` : ""}></div>
             
         
