@@ -9,7 +9,7 @@ const RESOURCES_DIS = {
     },
     rp: {
         title: "[ <b><i> Rage Powers </i></b> ]",
-        unl: () => true,
+        unl: () => player.rp.unl || player.stellarity.gte(2.5e11),
         icon: "rp",
         class: "red",
 
@@ -47,7 +47,7 @@ function updateResourcesHTML() {
             document.getElementById(`${i}_res_div`).style.display = "none"
         } else document.getElementById(`${i}_res_div`).style.display = "block"
         //document.getElementById(`${i}_res_div`).style.display = rd.unl() ? "block" : "none"
-        document.getElementById(`${i}_res_desc`) = " " + rd.desc(gs)
+        document.getElementById(`${i}_res_desc`).innerHTML = " " + rd.desc(gs)
     }
 }
     

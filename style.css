@@ -131,7 +131,6 @@ button {
 
 #resources_table {
 	display: flex;
-	right: 50px;
 	flex-flow: column wrap;
 	align-content: start;
 	justify-content: start;
