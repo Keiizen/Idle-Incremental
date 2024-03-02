@@ -1,11 +1,13 @@
 const RESOURCES_DIS = {
     points: {
+        name: "Points",
         unl: () => true,
         icon: "empty",
 
         desc: (gs)=>format(player.points)+"<br>"+formatGain(player.points, tmp.pointGain.mul(gs)),
     },
     rp: {
+        name: "Rage Powers",
         unl: () => true,
         icon: "empty",
         class: "red",
@@ -27,18 +29,19 @@ function setupResourcesHTML() {
         let rd = RESOURCES_DIS[i]
 
         h1 += `
-        <div id="${i}_res_div">
-            <div ${i in TOOLTIP_RES ? `id="${i}_tooltip" class="tooltip ${rd.class||""}" tooltip-pos="left" tooltip-align="left" tooltip-text-align="left"` : `class="${rd.class||""}"`}>
+        
                 <span style="margin-right: 5px; text-align: right;" id="${i}_res_desc">X</span>
                 <div><img src="images/${rd.icon||"empty"}.png" ${rd.resetBtn ? `onclick="reset_res_btn('${i}')" style="cursor: pointer;"` : ""}></div>
             </div>
-        </div>
+        
         `
-
-       
+        let resd = document.createElement("div")
+        resd.setAttribute("class", rd.class ? rd.class : "")
+        resd.innerHTML = 
+        document.getElementById("resources_table").appendChild(resd)
     }
     
-    document.getElementById("resources_table").innerHTML = h1
+    
 }
 
 function updateResourcesHTML() {
@@ -52,7 +55,7 @@ function updateResourcesHTML() {
         document.getElementById(i+"_res_div").style.display = unl ? "block" : "none"
 
         if (unl) {
-            document.getElementById(i*"_res_desc").innerHTML = rd.desc(gs)
+            document.getElementById(i*"_res_desc").innerHTML = " [ <b><i> " + rd.name + " </i></b>] " +rd.desc(gs)
         }
     }
 }
