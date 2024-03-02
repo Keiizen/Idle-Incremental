@@ -20,13 +20,6 @@ function setupHTML() {
 
 
 function updateHTML() {
-	let all = document.getElementsByTagName("*")
-	for (let i=0;i<all.length;i++){
-		let x = all[i]
-		if (!tmp.el[x.id]) {
-			tmp.el[x.id] = new Element(x)
-		}
-	}
 	//document.documentElement.style.setProperty('--font', player.options.font)
 	//document.documentElement.style.setProperty('--cx', tmp.cx)
 	//document.documentElement.style.setProperty('--cy', tmp.cy)
@@ -36,7 +29,7 @@ function updateHTML() {
 	let displayMainTab = true
 	
 
-    //tmp.el.app.setDisplay(tmp.start && displayMainTab)
+    tmp.el.app.setDisplay(tmp.start && displayMainTab)
 	
 
 	updateResourcesHTML()

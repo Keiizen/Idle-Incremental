@@ -42,6 +42,7 @@ function setupResourcesHTML() {
 }
 
 function updateResourcesHTML() {
+    let gs = tmp.gs
    
 
     for (i in RESOURCES_DIS) {
@@ -51,7 +52,7 @@ function updateResourcesHTML() {
         tmp.el[i+"_res_div"].setDisplay(unl)
 
         if (unl) {
-            tmp.el[i+"_res_desc"].setHTML(rd.desc(tmp.gs))
+            tmp.el[i+"_res_desc"].setHTML(rd.desc(gs))
         }
     }
 }
