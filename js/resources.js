@@ -1,13 +1,13 @@
 const RESOURCES_DIS = {
     points: {
         unl: () => true,
-        icon: "",
+        //icon: "",
 
         desc: (gs)=>format(player.points,0)+"<br>"+formatGain(player.points, tmp.pointGain.mul(gs)),
     },
     rp: {
         unl: () => player.points.gte(1e12),
-        icon: "",
+        //icon: "",
         class: "red",
 
         desc: (gs)=>format(player.rp.points,0)+"<br>"+"(+"+format(tmp.rp.gain,0)+")",
