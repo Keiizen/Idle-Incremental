@@ -29,8 +29,8 @@ function updateHTML() {
 
 	let displayMainTab = true
 	
-	tmp.el.loading.setDisplay(!tmp.start)
-    tmp.el.app.setDisplay(tmp.start && displayMainTab)
+	tmp.el.loading.setDisplay(tmp.start)
+    tmp.el.app.setDisplay(!tmp.start)
 	
 
 	updateResourcesHTML()

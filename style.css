@@ -137,7 +137,7 @@ button {
 	font-size: 12px;
 }
 
-#table_resources {
+#resoirces_table {
 	display: flex;
 	flex-flow: column wrap;
 	align-content: start;
