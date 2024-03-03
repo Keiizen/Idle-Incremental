@@ -3,14 +3,14 @@ const RESOURCES_DIS = {
         unl: ()=>true,
         icon: "stars",
 
-        desc: (gs)=>format(player.stellarity,0)+"<br>"+formatGain(player.stellarity, tmp.stellarityGain.mul(gs)),
+        desc: (gs)=>format(player.stellarity)+"<br>"+formatGain(player.stellarity, tmp.stellarityGain.mul(gs)),
     },
     rp: {
         unl: ()=>player.rp.unl||player.stellarity.gte(2.5e11),
         icon: "rp",
         class: "red",
 
-        desc: (gs)=>format(player.rp.points,0)+"<br>"+(tmp.rp.gain.gte(1e30)?formatGain(player.rp.points, tmp.rp.gain.mul(gs)):"(+"+format(tmp.rp.gain,0)+")"),
+        desc: (gs)=>format(player.rp.points)+"<br>"+(tmp.rp.gain.gte(1e30)?formatGain(player.rp.points, tmp.rp.gain.mul(gs)):"(+"+format(tmp.rp.gain,0)+")"),
     
         resetBtn() { FORMS.rp.reset() },
     },
@@ -18,7 +18,7 @@ const RESOURCES_DIS = {
         unl: ()=>true,
         icon: "time",
         class: "orange",
-        desc: ()=>'x'+format(tmp.gs,0)+' gamespeed'
+        desc: ()=>'x'+format(tmp.gs)+' gamespeed'
     }
 
 }

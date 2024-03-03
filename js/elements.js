@@ -17,6 +17,10 @@ function setupHTML() {
 }
 
 
+function hidenav(opt) {
+	player.options.hidenav[opt] = !player.options.hidenav[opt]
+}
+
 
 
 function updateHTML() {
@@ -31,6 +35,7 @@ function updateHTML() {
 	
 
 	updateResourcesHTML()
+	tmp.el["resources_table"].setDisplay(player.options.hidenav[1])
 	tmp.el.app.setDisplay(tmp.start)
 	tmp.el.loading.setDisplay(!tmp.start)
 }

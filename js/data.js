@@ -65,7 +65,10 @@ function getPlayerData() {
             massDis: 0,
             res_hide: {},
 
-            nav_hide: [],
+            hidenav: {
+                0: false,
+                1: false
+            },
         },
         confirms: {},
         offline: {

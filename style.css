@@ -140,9 +140,8 @@ button {
 	flex-flow: column wrap;
 	align-content: center;
 	justify-content: center;
-	width: calc(100% - 100px);
-	min-height: 110px;
-	max-height: 115px;
+	width: 90%;
+	height: 100%;
 	margin: 5px 0px;
 	padding-top: 40px;
 }
