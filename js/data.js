@@ -180,9 +180,9 @@ function loadGame(start=true, gotNaN=false) {
         setInterval(checkNaN,1000)
        
         
-            setTimeout(()=>{
+            /*setTimeout(()=>{
                 tmp.start = true
-            },2500)
+            },2500)*/
 
         
 
