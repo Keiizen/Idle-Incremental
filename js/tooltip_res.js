@@ -20,6 +20,12 @@ const TOOLTIP_RES = {
 
             return h
         },
+    },
+    gamespeed: {
+        full: "Game Speed",
+        desc() {
+            let h = `<i>Multiplies the speed (gain) of which you gain resources</i>`
+        }
     }
 
 }

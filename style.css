@@ -130,8 +130,8 @@ button {
 #resources_table {
 	display: flex;
 	flex-flow: column wrap;
-	align-content: center;
-	justify-content: center;
+	align-content: start;
+	justify-content: start;
 	width: calc(100% - 50px);
 	min-height: 110px;
 	max-height: 115px;
@@ -142,7 +142,7 @@ button {
 .resources {
 	display: flex;
 	justify-content: start;
-	align-items: center;
+	align-items: end;
 	min-width: 300px;
 }
 
@@ -417,7 +417,6 @@ h4 {
 	width: 246px;
 	height: 100%;
 	overflow-y: auto;
-	border-left: solid 2px white;
 }
 
 #resources_table > div {
