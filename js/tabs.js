@@ -8,17 +8,15 @@ const TABS = {
     tabTable: {0: {Name: "main_tab"}, 1: {Name: "upgrades_tab"}}
 }
 
-function openTabTerminal() {
-    player.options.hidenav[0] = !player.options.hidenav[0]
-}
+
 
 
 function updateTabs() {
-    for (i in TABS.tabTable) {
+    /*for (i in TABS.tabTable) {
         let tab = TABS.tabTable[i]
         tmp.el[tab.Name].setDisplay(tab.Name == player.curtab)
-    }
+    }*/
     
-    tmp.el.tab_terminal.setHTML(player.options.hidenav[0] ? "v" : "^")
-    tmp.el.hideres.setHTML(player.options.hidenav[1] ? "v" : "^")
+    tmp.el.tab_terminal.setHTML(player.options.hidenav[0] ? "^" : "v")
+    tmp.el.hideres.setHTML(player.options.hidenav[1] ? "^" : "v")
 }
