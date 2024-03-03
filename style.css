@@ -130,15 +130,15 @@ button {
 }
 
 #hideres {
-	position: fixed;
-	left: 40px;
-	width: 25%;
+	position: relative;
+	left: 70%;
+	width: 30%;
 	height: 7%;
 }
 #openTabTerminal {
-	position: fixed;
-	right: 40px;
-	width: 25%;
+	position: relative;
+	right: 70%;
+	width: 3%;
 	height: 7%;
 }
 #tab_terminal {
@@ -146,7 +146,7 @@ button {
 	width: 50%;
 	height: 100%;
 }
-#hideres {
+#resources_table {
 	position: fixed;
 	right: 50%;
 	width: 50%;
