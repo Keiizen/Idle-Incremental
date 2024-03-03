@@ -3,6 +3,7 @@ const TABS = {
             let tab = id+"_tab"
             if (tab != player.curtab) {
                 player.curtab = tab
+                for (let x = 0; x <= 1; x++) player.options.hidenav[x] = true
             }
     },
     tabTable: {0: {Name: "main_tab"}, 1: {Name: "upgrades_tab"}}
