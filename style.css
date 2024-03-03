@@ -44,7 +44,7 @@ button {
 	margin-bottom: 13px;
 }
 
-/*#notify {
+#notify {
 	z-index: 3;
 	position: fixed;
     left: 50%;
@@ -62,7 +62,7 @@ button {
 #notify.hide {
 	opacity: 0;
 	top: -130px;
-}*/
+}
 
 
 
@@ -140,6 +140,7 @@ button {
 	max-height: 115px;
 	margin: 5px 0px;
 	padding-top: 40px;
+	right: 50%
 }
 
 .resources {

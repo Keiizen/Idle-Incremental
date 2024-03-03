@@ -285,8 +285,8 @@ function simulateTime(sec) {
 
   
 
-    if (s2.stellarity.gte(10)) h += `<br>Your stellarity’s exponent<sup>2</sup> is increased by <b>${s2.stellarity.format(2)}</b>.`
-    else if (s.mass.gte(10)) h += `<br>Your stellarity’s exponent is increased by <b>${s.stellarity.format(2)}</b>.`
+    if (s2.stellarity.gte(10)) h += `<br>Your stellarity's exponent<sup>2</sup> is increased by <b>${s2.stellarity.format(2)}</b>.`
+    else if (s.stellarity.gte(10)) h += `<br>Your stellarity's exponent is increased by <b>${s.stellarity.format(2)}</b>.`
 
    
 
