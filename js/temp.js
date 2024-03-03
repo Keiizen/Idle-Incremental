@@ -41,18 +41,18 @@ function resetTemp() {
     tmp.notify = {}
 }
 
-function updateRagePowerTemp() {
-    if (!tmp.rp) tmp.rp = {}
-    tmp.rp.gain = FORMS.rp.gain()
-    tmp.rp.can = tmp.rp.gain.gte(1)
+function updateSolarMatterTemp() {
+    if (!tmp.sm) tmp.sm = {}
+    tmp.sm.gain = FORMS.sm.gain()
+    tmp.sm.can = tmp.sm.gain.gte(1)
 }
 
 function updateUpgradesTemp() {
     
     UPGS.main.temp()
 }
-function updatestellariumTemp() {
-tmp.stellariumGain = FORMS.stellariumGain()
+function updatePointTemp() {
+tmp.pointGain = FORMS.pointGain()
 }
 function updateGamespeedTemp() {
     tmp.gs = FORMS.gameSpeed() 
@@ -61,8 +61,8 @@ function updateTemp() {
     tmp.offlineActive = player.offline.time > 1
     tmp.offlineMult = tmp.offlineActive?player.offline.time+1:1
     updateGamespeedTemp()
-    updatestellariumTemp()
-    updateRagePowerTemp()
+    updatePointTemp()
+    updateSolarMatterTemp()
     //updateUpgradesTemp()
    
 }

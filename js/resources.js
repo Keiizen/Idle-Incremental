@@ -1,18 +1,18 @@
 const RESOURCES_DIS = {
-    stellarium: {
+    points: {
         unl: ()=>true,
         icon: "stars",
 
-        desc: (gs)=>format(player.stellarium)+"<br>"+formatGain(player.stellarium, tmp.stellariumGain.mul(gs)),
+        desc: (gs)=>format(player.points)+"<br>"+formatGain(player.points, tmp.pointGain.mul(gs)),
     },
-    rp: {
-        unl: ()=>player.rp.unl||player.stellarium.gte(2.5e11),
-        icon: "rp",
+    sm: {
+        unl: ()=>player.sm.unl||player.points.gte(2.5e11),
+        icon: "sm",
         class: "red",
 
-        desc: (gs)=>format(player.rp.points)+"<br>"+(tmp.rp.gain.gte(1e30)?formatGain(player.rp.points, tmp.rp.gain.mul(gs)):"(+"+format(tmp.rp.gain,0)+")"),
+        desc: (gs)=>format(player.sm.points)+"<br>"+(tmp.sm.gain.gte(1e30)?formatGain(player.sm.points, tmp.sm.gain.mul(gs)):"(+"+format(tmp.sm.gain,0)+")"),
     
-        resetBtn() { FORMS.rp.reset() },
+        resetBtn() { FORMS.sm.reset() },
     },
     gamespeed: {
         unl: ()=>true,

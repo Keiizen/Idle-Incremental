@@ -9,35 +9,35 @@
                 }
             }
         },
-        ids: [null,'stellar', 'rp',],
+        ids: [null,'stellar', 'sm',],
         cols: 2,
         over(x,y) { player.main_upg_msg = [x,y] },
         reset() { player.main_upg_msg = [0,0] },
         1: {
             title: "Stellar Upgrades",
-            res: "Stellarium",
-            getRes() {return player.stellarium},
+            res: "points",
+            getRes() {return player.points},
             unl() { return true },
-            can(x) { return player.stellarium.gte(this[x].cost) && !player.mainUpg.stellar.includes(x) },
+            can(x) { return player.points.gte(this[x].cost) && !player.mainUpg.stellar.includes(x) },
             buy(x) {
                 if (this.can(x)) {
-                    player.stellarium = player.stellarium.sub(this[x].cost)
+                    player.points = player.points.sub(this[x].cost)
                     player.mainUpg.stellar.push(x)
                 }
             },
-            auto_unl() { return hasUpgrade('rp', 6)},
+            auto_unl() { return hasUpgrade('sm', 6)},
             lens: 2,
             1: {
                 unl() {return true},
-                desc: 'Stellarium boosts itself (log5(x)+1)',
+                desc: 'points boosts itself (log5(x)+1)',
                 cost: E(250),
                 effect() {
-                    let ret = player.stellarium.log(5).add(1)
+                    let ret = player.points.log(5).add(1)
                     //ret = ret.softcap(1e33, 0.75,0)
                     return ret
                 },
                 effDesc(x=this.effect()) {
-                    return formatMult(x)+" Stellarium"
+                    return formatMult(x)+" points"
                 }
             },
             2: {
@@ -56,28 +56,28 @@
         2: {
             title: "Rage Upgrades",
             res: "Rage Power",
-            getRes() { return player.rp.points },
-            unl() { return player.rp.unl },
-            can(x) { return player.rp.points.gte(this[x].cost) && !player.mainUpg.rp.includes(x) },
+            getRes() { return player.sm.points },
+            unl() { return player.sm.unl },
+            can(x) { return player.sm.points.gte(this[x].cost) && !player.mainUpg.sm.includes(x) },
             buy(x) {
                 if (this.can(x)) {
-                    player.rp.points = player.rp.points.sub(this[x].cost)
-                    player.mainUpg.rp.push(x)
+                    player.sm.points = player.sm.points.sub(this[x].cost)
+                    player.mainUpg.sm.push(x)
                 }
             },
-            auto_unl() { return player.rp.points.gte(1e30) },
+            auto_unl() { return player.sm.points.gte(1e30) },
             lens: 1,
         },
             1: {
-                unl() { return player.rp.points.gte(1) },
-                desc: "Stellarium is boosted by x10",
+                unl() { return player.sm.points.gte(1) },
+                desc: "points is boosted by x10",
                 cost: E(1),
                 effect() {
                     let ret = E(10)
                     return ret
                 },
                 effDesc(x=this.effect()) {
-                    return formatMult(x) + " Stellarium"
+                    return formatMult(x) + " points"
                 }
             },
          }       

@@ -41,7 +41,7 @@ function calc(dt) {
     let gs = tmp.gs.mul(dt)
 
     if (tmp.pass<=0) {
-        player.stellarium = player.stellarium.add(tmp.stellariumGain.mul(gs))
+        player.points = player.points.add(tmp.pointsGain.mul(gs))
        }
     tmp.pass = Math.max(0,tmp.pass-1)
 
@@ -53,8 +53,8 @@ function calc(dt) {
 
 function getPlayerData() {
     let s = {
-        stellarium: E(0),
-        rp: {
+        points: E(0),
+        sm: {
             points: E(0),
             unl:false
         },
@@ -284,17 +284,17 @@ function simulateTime(sec) {
     let h = `You were gone offline for <b>${formatTime(sec)}</b>.<br>`
 
     let s = {
-        stellarium: player.stellarium.max(1).div(player_before.stellarium.max(1)).log10()
+        points: player.points.max(1).div(player_before.points.max(1)).log10()
     }
 
     let s2 = {
-        stellarium: player.stellarium.max(1).log10().max(1).div(player_before.stellarium.max(1).log10().max(1)).log10()
+        points: player.points.max(1).log10().max(1).div(player_before.points.max(1).log10().max(1)).log10()
     }
 
   
 
-    if (s2.stellarium.gte(10)) h += `<br>Your stellarium's exponent<sup>2</sup> is increased by <b>${s2.stellarium.format(2)}</b>.`
-    else if (s.stellarium.gte(10)) h += `<br>Your stellarium's exponent is increased by <b>${s.stellarium.format(2)}</b>.`
+    if (s2.points.gte(10)) h += `<br>Your points's exponent<sup>2</sup> is increased by <b>${s2.points.format(2)}</b>.`
+    else if (s.points.gte(10)) h += `<br>Your points's exponent is increased by <b>${s.points.format(2)}</b>.`
 
    
 

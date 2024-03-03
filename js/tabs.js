@@ -6,7 +6,7 @@ const TABS = {
                 for (let x = 0; x <= 1; x++) player.options.hidenav[x] = true
             }
     },
-    tabTable: {0: {Name: "main_tab"}, 1: {Name: "upgrades_tab"}}
+    tabTable: {0: {Name: "main_tab"}, 1: {Name: "upgrades_tab"}, 2: {Name: "resources_tab"}}
 }
 
 

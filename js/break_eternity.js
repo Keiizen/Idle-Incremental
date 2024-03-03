@@ -732,7 +732,7 @@
       };
   
       Decimal.randomDecimalForTesting = function (maxLayers) {
-        // NOTE: This doesn't follow any kind of sane random distribution, so use this for testing purposes only.
+        // NOTE: This doesn't follow any kind of sane random distribution, so use this for testing pusmoses only.
         //5% of the time, return 0
         if (Math.random() * 20 < 1) {
           return FC_NN(0, 0, 0);

@@ -20,33 +20,33 @@ const ST_NAMES = [
 
 const FORMS = {
    
-   stellariumGain() {
+   pointsGain() {
     let x = E(1)
 
     return x
    },
-    rp: {
+    sm: {
         gain() {
            
-            let gain = player.stellarium.div(1e15).root(2)
+            let gain = player.points.div(1e15).root(2)
            
             return gain.floor()
         },
         reset() {
-            if (tmp.rp.can) {
-                FORMS.rp.doReset()
-                player.rp.unl = true
+            if (tmp.sm.can) {
+                FORMS.sm.doReset()
+                player.sm.unl = true
             }
         },
         doReset() {
-           player.stellarium=E(0)
-           player.rp.points = player.rp.points.add(tmp.rp.gain)
+           player.points=E(0)
+           player.sm.points = player.sm.points.add(tmp.sm.gain)
         }
     },
     gameSpeed() {
         let gs = E(1)
-        gs = gs.add(player.stellarium.pow(.05).add(1))
-        if (player.stellarium.gte(1e100)) gs = gs.mul(player.stellarium.pow(.1).add(1))
+        gs = gs.add(player.points.pow(.05).add(1))
+        if (player.points.gte(1e100)) gs = gs.mul(player.points.pow(.1).add(1))
         return gs
     }
   }
@@ -223,6 +223,6 @@ function capitalFirst(str) {
 
 
 setInterval(()=>{
-    player.stellarium = player.stellarium.add(tmp.stellariumGain.mul(tmp.gs).div(16))
+    player.points = player.points.add(tmp.pointsGain.mul(tmp.gs).div(16))
     
 },62.5)
