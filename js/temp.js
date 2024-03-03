@@ -34,7 +34,7 @@ function resetTemp() {
        
     }
 
-   
+    for (let x = 1; x < UPGS.main.cols; x++) tmp.upgs.main[x] = []
     
     tmp.el = keep[0]
     tmp.prevSave = keep[1]

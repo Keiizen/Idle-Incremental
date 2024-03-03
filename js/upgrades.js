@@ -26,7 +26,7 @@ const UPGS = {
                 }
             },
             auto_unl() { return hasUpgrade('rp', 6)},
-            lens: 1,
+            lens: 2,
             1: {
                 unl() {return true},
                 desc: 'Stellarium boosts itself (log5(x)+1)',
@@ -80,7 +80,8 @@ const UPGS = {
                     return formatMult(x) + " Stellarium"
                 }
             },
-         }        }
+         }       
+        }
 function hasUpgrade(id,x) { return player.mainUpg[id].includes(x) }
 function upgEffect(id,x,def=E(1)) { return tmp.upgs.main[id][x]?tmp.upgs.main[id][x].effect:def }
 function resetMainUpgs(id,keep=[]) {
