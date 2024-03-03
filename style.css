@@ -1,4 +1,13 @@
 
+* {
+    table-align: center;
+	text-align: center;
+}
+
+p {
+	line-height: 0.6;
+}
+
 body {
     color: white;
     background-color: hsl(0, 0%, 7%);
@@ -6,9 +15,7 @@ body {
 	font-size: 14px;
 	margin: 0px;
 	user-select: none;
-    font-family: 'Arial', sans-serif
 }
-
 
 table, tr {
     display: flex;
@@ -127,12 +134,12 @@ button {
 	font-size: 12px;
 }
 
-#resources_table {
+#table_resources {
 	display: flex;
 	flex-flow: column wrap;
-	align-content: center;
-	justify-content: center;
-	width: calc(100% - 50px);
+	align-content: start;
+	justify-content: start;
+	width: 100%;
 	min-height: 110px;
 	max-height: 115px;
 	margin: 5px 0px;
@@ -142,7 +149,7 @@ button {
 .resources {
 	display: flex;
 	justify-content: start;
-	align-items: end;
+	align-items: center;
 	min-width: 300px;
 }
 
@@ -151,8 +158,8 @@ button {
 }
 
 .res_img {
-	width: 20px;
-	height: 20px;
+	width: 30px;
+	height: 30px;
 }
 
 .btn_tab {
@@ -264,7 +271,7 @@ h4 {
 	margin: 0px 15px
 }
 
-/*.primordium {
+.primordium {
 	width: 100%;
 	align-items: center;
 }
@@ -324,7 +331,7 @@ h4 {
 
 .matter_div.final > span:not(#FSS_scale) {
 	font-size: 12px;
-}*/
+}
 
 #popups {
 	z-index: 3;
@@ -350,13 +357,14 @@ h4 {
 .popup > input {
 	width: 300px;
 	margin-bottom: 10px;
-}/*
+}
+
 .pos_center {
 	position: absolute;
 	left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-}*/
+}
 
 
 
@@ -414,14 +422,15 @@ h4 {
 }*/
 
 #resources_table {
-	width: 250px;
+	width: 246px;
 	height: 100%;
 	overflow-y: auto;
+	border-left: solid 2px white;
 }
 
 #resources_table > div {
 	display: flex;
-	align-items: end;
+	align-items: center;
 	margin: 3px;
 	width: calc(100% - 6px);
 	height: 45px;
@@ -430,7 +439,7 @@ h4 {
 #resources_table > div > div {
 	display: flex;
 	justify-content: end;
-	align-items: end;
+	align-items: center;
 	width: 100%;
 }
 

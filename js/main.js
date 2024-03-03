@@ -45,8 +45,8 @@ const FORMS = {
     },
     gameSpeed() {
         let gs = E(1)
-        gs = gs.add(player.stellarity.log(10).add(1))
-        gs = gs.mul(player.stellarity.log(1000).add(1))
+        gs = gs.add(player.stellarity.pow(.05).add(1))
+        if (player.stellarity.gte(1e100)) gs = gs.mul(player.stellarity.pow(.1).add(1))
         return gs
     }
   }
@@ -56,7 +56,7 @@ function loop() {
     //ssf[1]()
     updateTemp()
     updateHTML()
-    //calc(diff/1000);
+    calc(diff/1000);
     date = Date.now();
     player.offline.current = date
 }
