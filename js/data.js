@@ -82,10 +82,10 @@ function getPlayerData() {
         curtab: "main_tab"
     }
 
-    for (let x = 1; x <= UPGS.main.cols; x++) {
+    /*for (let x = 1; x <= UPGS.main.cols; x++) {
         s.auto_mainUpg[UPGS.main.ids[x]] = false
         s.mainUpg[UPGS.main.ids[x]] = []
-    }
+    }*/
 
     
    
