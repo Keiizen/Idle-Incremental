@@ -183,8 +183,8 @@ function loadGame(start=true, gotNaN=false) {
 
         updateHTML()
 
-        let t = (Date.now() - player.offline.current)/1000
-        if (player.offline.active && t > 60) simulateTime(t)
+        //let t = (Date.now() - player.offline.current)/1000
+        //if (player.offline.active && t > 60) simulateTime(t)
 
         updateTooltipResHTML(true)
 

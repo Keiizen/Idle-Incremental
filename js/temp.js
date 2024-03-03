@@ -48,7 +48,6 @@ function updateRagePowerTemp() {
 }
 
 function updateUpgradesTemp() {
-    tmp.massFP = E(1);
     
     UPGS.main.temp()
 }
@@ -63,6 +62,7 @@ function updateTemp() {
     tmp.offlineMult = tmp.offlineActive?player.offline.time+1:1
     updateGamespeedTemp()
     updatestellariumTemp()
-   updateRagePowerTemp()
+    updateRagePowerTemp()
+    updateUpgradesTemp()
    
 }
