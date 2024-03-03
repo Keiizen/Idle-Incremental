@@ -7,7 +7,7 @@ function setupHTML() {
 	setupResourcesHTML()
 	
 
-	let main_upgs_table = new Element("main_upgs_table")
+	/*let main_upgs_table = new Element("main_upgs_table")
 	table = ""
 	for (let x = 1; x <= UPGS.main.cols; x++) {
 		let id = UPGS.main.ids[x]
@@ -19,7 +19,7 @@ function setupHTML() {
 		}
 		table += `</div><br><button id="main_upg_${x}_auto" class="btn" style="width: 80px;" onclick="player.auto_mainUpg.${id} = !player.auto_mainUpg.${id}">OFF</button></div>`
 	}
-	main_upgs_table.setHTML(table)
+	main_upgs_table.setHTML(table)*/
 	tmp.el = {}
 	let all = document.getElementsByTagName("*")
 	for (let i=0;i<all.length;i++) {
@@ -34,7 +34,7 @@ function navhide(opt) {
 	player.options.hidenav[opt] = !player.options.hidenav[opt]
 }
 
-function updateMainUpgradesHTML() {
+/*function updateMainUpgradesHTML() {
 	if (player.main_upg_msg[0] != 0) {
 		let upg1 = UPGS.main[player.main_upg_msg[0]]
 		let upg2 = UPGS.main[player.main_upg_msg[0]][player.main_upg_msg[1]]
@@ -58,7 +58,7 @@ function updateMainUpgradesHTML() {
 			tmp.el["main_upg_"+x+"_auto"].setTxt(player.auto_mainUpg[id]?"ON":"OFF")
 		}
 	}
-}
+}*/
 
 function updateHTML() {
 	//document.documentElement.style.setProperty('--font', player.options.font)
@@ -69,7 +69,7 @@ function updateHTML() {
 
 	 
 	if (hover_tooltip) updateTooltipResHTML()
-	if (player.curtab == "upgrades_tab") updateMainUpgradesHTML()
+	//if (player.curtab == "upgrades_tab") updateMainUpgradesHTML()
 	updateTabs()
 	updateResourcesHTML()
 	tmp.el.tab_terminal.setDisplay(player.options.hidenav[0])
