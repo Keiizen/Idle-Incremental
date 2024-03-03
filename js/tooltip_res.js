@@ -2,7 +2,7 @@ const TOOLTIP_RES = {
     stellarity: {
         full: "Stellarity",
         desc() {
-            let h = `You have acquired <b>${format(player.stellarity)}</b> Stellarity.`
+            let h = `You have <b>${format(player.stellarity)}</b> Stellarity.`
 
            
 
@@ -20,8 +20,8 @@ const TOOLTIP_RES = {
 
             return h
         },
-    },
-   
+    }
+
 }
 
 function updateTooltipResHTML(start=false) {

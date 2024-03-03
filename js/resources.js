@@ -3,7 +3,7 @@ const RESOURCES_DIS = {
         unl: ()=>true,
         icon: "stars",
 
-        desc: (gs)=>format(player.stellarity)+"<br>"+formatGain(player.strllarity, tmp.stellarityGain.mul(gs)),
+        desc: (gs)=>format(player.stellarity)+"<br>"+formatGain(player.stellarity, tmp.stellarityGain.mul(gs)),
     },
     rp: {
         unl: ()=>player.rp.unl||player.stellarity.gte(2.5e11),
