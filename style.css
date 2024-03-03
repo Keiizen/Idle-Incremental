@@ -15,6 +15,7 @@ body {
 	font-size: 14px;
 	margin: 0px;
 	user-select: none;
+    font-family: 'Roboto Mono', monospace
 }
 
 table, tr {
@@ -425,12 +426,11 @@ h4 {
 	width: 246px;
 	height: 100%;
 	overflow-y: auto;
-	border-left: solid 2px white;
 }
 
 #resources_table > div {
 	display: flex;
-	align-items: center;
+	align-items: end;
 	margin: 3px;
 	width: calc(100% - 6px);
 	height: 45px;
@@ -439,7 +439,7 @@ h4 {
 #resources_table > div > div {
 	display: flex;
 	justify-content: end;
-	align-items: center;
+	align-items: end;
 	width: 100%;
 }
 
