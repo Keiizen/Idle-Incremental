@@ -126,12 +126,7 @@ button {
 	color: gray
 }
 
-#hideres {
-	position:absolute;
-	left: 70%;
-	width: 30%;
-	height: 7%;
-}
+
 #openTabTerminal {
 	position: absolute;
 	width: 30%;
@@ -142,12 +137,7 @@ button {
 	width: 40%;
 	height: 100%;
 }
-#resources_table {
-	position: absolute;
-	right: 50%;
-	width: 50%;
-	height: 100%;
-}
+
 
 
 
@@ -164,7 +154,6 @@ button {
 }
 #resources_table {
 	display: flex;
-	bottom: 50px;
 	flex-flow: column wrap;
 	align-content: center;
 	justify-content: center;
