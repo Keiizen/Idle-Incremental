@@ -20,7 +20,7 @@ const ST_NAMES = [
 
 const FORMS = {
    
-   pointsGain() {
+   pointGain() {
     let x = E(1)
 
     return x
@@ -35,7 +35,7 @@ const FORMS = {
         reset() {
             if (tmp.sm.can) {
                 FORMS.sm.doReset()
-                player.sm.unl = true
+                
             }
         },
         doReset() {
@@ -56,6 +56,7 @@ function loop() {
     //ssf[1]()
     updateTemp()
     updateHTML()
+    updateData()
     //calc(diff/1000);
     date = Date.now();
     player.offline.current = date
