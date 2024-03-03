@@ -16,7 +16,9 @@ function updateTabs() {
         let tab = TABS.tabTable[i]
         tmp.el[tab.Name].setDisplay(tab.Name == player.curtab)
     }
-    
-    tmp.el.openTabTerminal.setHTML(player.options.hidenav[0] ? "^" : "v")
-    tmp.el.hideres.setHTML(player.options.hidenav[1] ? "^" : "v")
+    if (player.options.hidenav[0] == false && player.options.hidenav[1] == false) {
+        player.options.hidenav[1] = true
+    }
+    tmp.el.openTabTerminal.setHTML(player.options.hidenav[0] ? "Close Terminal" : "Open Terminal")
+    tmp.el.hideres.setHTML(player.options.hidenav[1] ? "Close Resources" : "Open Resources")
 }

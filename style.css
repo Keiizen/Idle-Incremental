@@ -132,10 +132,14 @@ button {
 #hideres {
 	position: fixed;
 	left: 40px;
+	width: 15%;
+	height: 7%;
 }
 #openTabTerminal {
 	position: fixed;
 	right: 40px;
+	width: 15%;
+	height: 7%;
 }
 
 

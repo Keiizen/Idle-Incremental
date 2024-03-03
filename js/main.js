@@ -223,6 +223,6 @@ function capitalFirst(str) {
 
 
 setInterval(()=>{
-    player.stellarium = player.stellarium.add(tmp.stellariumGain.mul(tmp.gs).div(8))
+    player.stellarium = player.stellarium.add(tmp.stellariumGain.mul(tmp.gs).div(16))
     
-},125)
+},62.5)
