@@ -31,7 +31,7 @@ function setupHTML() {
 }
 
 
-function hidenav(opt) {
+function navhide(opt) {
 	player.options.hidenav[opt] = !player.options.hidenav[opt]
 }
 

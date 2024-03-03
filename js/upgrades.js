@@ -25,7 +25,17 @@ const UPGS = {
                     player.mainupg.stellar.push(x)
                 }
             },
-            auto_unl() { return hasUpgrade('rp', 6)}
+            auto_unl() { return hasUpgrade('rp', 6)},
+            0: {
+                unl() {return true},
+                desc: `Stellarium boosts itself (log5(x)+1)<br>Currently: ${player.stellarium.log(5).add(1)}`,
+                cost: E(250),
+                effect() {
+                    let ret = player.stellarium.log(5).add(1)
+                    ret = ret.softcap()
+                    return ret
+                }
+            }
         },
         1: {
             title: "Rage Upgrades",

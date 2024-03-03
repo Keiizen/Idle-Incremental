@@ -9,7 +9,7 @@ const TABS = {
 }
 
 function openTabTerminal() {
-    player.options.navhide[0] = !player.options.navhide[0]
+    player.options.hidenav[0] = !player.options.hidenav[0]
 }
 
 
@@ -19,6 +19,6 @@ function updateTabs() {
         tmp.el[tab.Name].setDisplay(tab.Name == player.curtab)
     }
     
-    tmp.el.tab_terminal.setHTML(player.options.navhide[0] ? "v" : "^")
-    tmp.el.hideres.setHTML(player.options.navhide[1] ? "v" : "^")
+    tmp.el.tab_terminal.setHTML(player.options.hidenav[0] ? "v" : "^")
+    tmp.el.hideres.setHTML(player.options.hidenav[1] ? "v" : "^")
 }
