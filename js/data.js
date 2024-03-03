@@ -180,7 +180,7 @@ function loadGame(start=true, gotNaN=false) {
         setInterval(checkNaN,1000)
        
         
-            tmp.start = true
+            //tmp.start = true
 
         
 
