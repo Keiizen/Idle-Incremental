@@ -129,9 +129,15 @@ button {
 	color: gray
 }
 
-#hideres, #openTabTerminal {
-	position: fixed
+#hideres {
+	position: fixed;
+	left: 40px;
 }
+#openTabTerminal {
+	position: fixed;
+	right: 40px;
+}
+
 
 
 
