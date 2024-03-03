@@ -54,8 +54,8 @@ const UPGS = {
             }
         },
         2: {
-            title: "Rage Upgrades",
-            res: "Rage Power",
+            title: "Solar Upgrades",
+            res: "Solar Matter",
             getRes() { return player.sm.points },
             unl() { return player.sm.unl },
             can(x) { return player.sm.points.gte(this[x].cost) && !player.mainUpg.sm.includes(x) },
