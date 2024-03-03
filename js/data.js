@@ -145,9 +145,6 @@ function load(x){
 
 
 
-var game = {
-    loaded: false
-}
 
 function loadGame(start=true, gotNaN=false) {
     if (!gotNaN) tmp.prevSave = localStorage.getItem("testSave")
@@ -183,7 +180,7 @@ function loadGame(start=true, gotNaN=false) {
         setInterval(checkNaN,1000)
        
         setTimeout(()=>{
-            game.loaded = true
+            tmp.start = true
         },4000)
         
 
