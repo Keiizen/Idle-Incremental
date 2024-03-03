@@ -1,7 +1,4 @@
 
-
-
-
 body {
     color: white;
     background-color: hsl(0, 0%, 7%);
@@ -140,7 +137,6 @@ button {
 	max-height: 115px;
 	margin: 5px 0px;
 	padding-top: 40px;
-	right: 50px;
 }
 
 .resources {
@@ -328,7 +324,7 @@ h4 {
 
 .matter_div.final > span:not(#FSS_scale) {
 	font-size: 12px;
-}
+}*/
 
 #popups {
 	z-index: 3;
@@ -354,13 +350,13 @@ h4 {
 .popup > input {
 	width: 300px;
 	margin-bottom: 10px;
-}*/
+}/*
 .pos_center {
 	position: absolute;
 	left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-}
+}*/
 
 
 
