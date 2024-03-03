@@ -5,12 +5,7 @@ function setupHTML() {
 	
 	//document.getElementById("test").textContent = "No!"
 	setupResourcesHTML()
-	tmp.el = {}
-	let all = document.getElementsByTagName("*")
-	for (let i=0;i<all.length;i++) {
-		let x = all[i]
-		tmp.el[x.id] = new Element(x)
-	}
+	
 
 	let main_upgs_table = new Element("main_upgs_table")
 	table = ""
@@ -25,8 +20,12 @@ function setupHTML() {
 		table += `</div><br><button id="main_upg_${x}_auto" class="btn" style="width: 80px;" onclick="player.auto_mainUpg.${id} = !player.auto_mainUpg.${id}">OFF</button></div>`
 	}
 	main_upgs_table.setHTML(table)
-
-	
+	tmp.el = {}
+	let all = document.getElementsByTagName("*")
+	for (let i=0;i<all.length;i++) {
+		let x = all[i]
+		tmp.el[x.id] = new Element(x)
+	}
     
 }
 

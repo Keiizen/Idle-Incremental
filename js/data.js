@@ -63,7 +63,6 @@ function getPlayerData() {
             notation: 'standard',
            
             massDis: 0,
-            res_hide: {},
 
             hidenav: {
                 0: true,
