@@ -78,7 +78,7 @@ function getPlayerData() {
             time: 0,
         },
         mainUpg : {},
-        
+        auto_mainUpg: {},
         time: 0,
         curtab: "main_tab"
     }
