@@ -32,7 +32,7 @@ const UPGS = {
                 cost: E(250),
                 effect() {
                     let ret = player.stellarium.log(5).add(1)
-                    ret = ret.softcap()
+                    ret = ret.softcap(1e33, 0.75,0)
                     return ret
                 },
                 effDesc(x=this.effect()) {
