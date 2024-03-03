@@ -222,6 +222,6 @@ function capitalFirst(str) {
 
 
 setInterval(()=>{
-    player.stellarity = player.stellarity.add(tmp.stellarityGain.mul(tmp.gs))
+    player.stellarity = player.stellarity.add(tmp.stellarityGain.mul(tmp.gs)).div(8)
     
-})
+},125)

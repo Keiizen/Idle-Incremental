@@ -181,7 +181,8 @@ function loadGame(start=true, gotNaN=false) {
        
         setTimeout(()=>{
             tmp.start = true
-        },4000)
+        },2000)
+
         
 
        
