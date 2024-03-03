@@ -47,6 +47,11 @@ function updateRagePowerTemp() {
     tmp.rp.can = tmp.rp.gain.gte(1)
 }
 
+function updateUpgradesTemp() {
+    tmp.massFP = E(1);
+    
+    UPGS.main.temp()
+}
 function updatestellariumTemp() {
 tmp.stellariumGain = FORMS.stellariumGain()
 }
