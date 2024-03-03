@@ -1,8 +1,5 @@
 
-* {
-    table-align: center;
-	text-align: center;
-}
+
 
 p {
 	line-height: 0.6;
@@ -130,8 +127,8 @@ button {
 }
 
 #hideres {
-	position: absolute;
-	left: 40%;
+	position:absolute;
+	left: 70%;
 	width: 30%;
 	height: 7%;
 }
@@ -142,7 +139,7 @@ button {
 }
 #tab_terminal {
 	position: absolute;
-	width: 50%;
+	width: 40%;
 	height: 100%;
 }
 #resources_table {
