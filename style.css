@@ -160,6 +160,12 @@ button {
 	font-size: 12px;
 }
 
+#resources_container {
+	width: 40%;
+	height: 100%;
+	position: fixed;
+	left: 60%;
+}
 #table_resources {
 	display: flex;
 	right: 50px;
