@@ -131,7 +131,7 @@ button {
 
 #hideres {
 	position: absolute;
-	left: 70%;
+	left: 40%;
 	width: 30%;
 	height: 7%;
 }
@@ -167,7 +167,7 @@ button {
 }
 #resources_table {
 	display: flex;
-	right: 100px;
+	bottom: 50px;
 	flex-flow: column wrap;
 	align-content: center;
 	justify-content: center;
