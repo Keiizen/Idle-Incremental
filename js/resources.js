@@ -42,9 +42,9 @@ function updateResourcesHTML() {
         let rd = RESOURCES_DIS[i]
         let unl = rd.unl()
         
-        tmp.el[`${i}_res_div`].setDisplay(unl)
+        tmp.el[i+'_res_div'].setDisplay(unl)
 
-        tmp.el[`${i}_res_desc`].setHTML(rd.desc(gs))
+        tmp.el[i+'_res_desc'].setHTML(rd.desc(gs))
     }
 }
     
