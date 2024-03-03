@@ -47,10 +47,10 @@ function updateRagePowerTemp() {
     tmp.rp.can = tmp.rp.gain.gte(1)
 }
 
-/*function updateUpgradesTemp() {
+function updateUpgradesTemp() {
     
     UPGS.main.temp()
-}*/
+}
 function updatestellariumTemp() {
 tmp.stellariumGain = FORMS.stellariumGain()
 }
@@ -63,6 +63,6 @@ function updateTemp() {
     updateGamespeedTemp()
     updatestellariumTemp()
     updateRagePowerTemp()
-    //updateUpgradesTemp()
+    updateUpgradesTemp()
    
 }
