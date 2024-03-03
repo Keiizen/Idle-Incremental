@@ -22,18 +22,21 @@ const UPGS = {
             buy(x) {
                 if (this.can(x)) {
                     player.stellarium = player.stellarium.sub(this[x].cost)
-                    player.mainupg.stellar.push(x)
+                    player.mainUpg.stellar.push(x)
                 }
             },
             auto_unl() { return hasUpgrade('rp', 6)},
             0: {
                 unl() {return true},
-                desc: `Stellarium boosts itself (log5(x)+1)<br>Currently: ${player.stellarium.log(5).add(1)}`,
+                desc: 'Stellarium boosts itself (log5(x)+1)',
                 cost: E(250),
                 effect() {
                     let ret = player.stellarium.log(5).add(1)
                     ret = ret.softcap()
                     return ret
+                },
+                effDesc(x=this.effect()) {
+                    return formatMult(x)
                 }
             }
         },
@@ -59,9 +62,7 @@ const UPGS = {
                     let ret = E(10)
                     return ret
                 },
-                effDesc(x=this.effect()) {
-                    return format(x)+"x"
-                },
+                
             },
          }
          }
