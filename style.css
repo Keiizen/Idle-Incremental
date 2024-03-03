@@ -136,7 +136,8 @@ button {
 	height: 7%;
 }
 #tab_terminal {
-	position: absolute;
+	position: fixed;
+	bottom: 12.5%;
 	width: 40%;
 	height: 100%;
 }

@@ -45,8 +45,8 @@ const FORMS = {
     },
     gameSpeed() {
         let gs = E(1)
-        gs = gs.add(player.points.pow(.05).add(1))
-        if (player.points.gte(1e100)) gs = gs.mul(player.points.pow(.1).add(1))
+        gs = gs.add(player.points.pow(.05))
+        if (player.points.gte(1e100)) gs = gs.mul(player.points.div(1e100).pow(.1))
         return gs
     }
   }

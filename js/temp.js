@@ -52,7 +52,7 @@ function updateUpgradesTemp() {
     UPGS.main.temp()
 }
 function updatePointTemp() {
-tmp.pointGain = FORMS.pointGain()
+    tmp.pointGain = FORMS.pointGain()
 }
 function updateGamespeedTemp() {
     tmp.gs = FORMS.gameSpeed() 
