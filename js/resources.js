@@ -1,50 +1,57 @@
 const RESOURCES_DIS = {
     stellarity: {
-        unl: () => true,
+        unl: ()=>true,
         icon: "stars",
-        class: "magenta",
 
-        desc: (gs)=>format(player.stellarity)+"<br>"+formatGain(player.stellarity, tmp.stellarityGain.mul(gs)),
+        desc: (gs)=>format(player.stellarity)+"<br>"+formatGain(player.strllarity, tmp.stellarityGain.mul(gs)),
     },
     rp: {
-        title: "[ <b><i> Rage Powers </i></b> ]",
-        unl: () => player.rp.unl || player.stellarity.gte(2.5e11),
+        unl: ()=>player.rp.unl||player.stellarity.gte(2.5e11),
         icon: "rp",
         class: "red",
 
-        desc: (gs)=>format(player.rp.points)+"<br>"+"(+"+format(tmp.rp.gain)+")",
+        desc: (gs)=>format(player.rp.points,0)+"<br>"+(tmp.rp.gain.gte(1e30)?formatGain(player.rp.points, tmp.rp.gain.mul(gs)):"(+"+format(tmp.rp.gain,0)+")"),
     
-        resetBtn() { FORMS.rp.reset() }
-    },
+        resetBtn() { FORMS.rp.reset() },
+    }
+
 }
 
 function reset_res_btn(id) { RESOURCES_DIS[id].resetBtn() }
+
 function setupResourcesHTML() {
-    let nil = ""
-    
+    let h1 = ""
+
     for (i in RESOURCES_DIS) {
         let rd = RESOURCES_DIS[i]
-        let h1 = ""
+
         h1 += `
         <div id="${i}_res_div">
-        <div ${i in TOOLTIP_RES ? `id="${i}_tooltip" class="tooltip ${rd.class||""}" tooltip-pos="left" tooltip-align="left" tooltip-text-align="left"` : `class="${rd.class||""}"`}>
-                <span style="margin-right: 5px; text-align: right;" id="${i}_res_desc"> x</span>
-                <div><img src="images/${rd.icon||"empty"}.png" ${rd.resetBtn ? `onclick="reset_res_btn('${i}')" style="cursor: pointer;"` : ""}></div>
+            <div ${i in TOOLTIP_RES ? `id="${i}_tooltip" class="tooltip ${rd.class||""}" tooltip-pos="left" tooltip-align="left" tooltip-text-align="left"` : `class="${rd.class||""}"`}>
+                <span style="margin-right: 5px; text-align: right;" id="${i}_res_desc">X</span>
+                <div><img src="images/${rd.icon||"mass"}.png" ${rd.resetBtn ? `onclick="reset_res_btn('${i}')" style="cursor: pointer;"` : ""}></div>
             </div>
-        </div>`
-        new Element("resources_table").setHTML(h1)
+        </div>
+        `
+
+       
     }
-}        
+
+    new Element("resources_table").setHTML(h1)
+   
+}
 
 function updateResourcesHTML() {
     let gs = tmp.gs
+
     for (i in RESOURCES_DIS) {
         let rd = RESOURCES_DIS[i]
-        let unl = rd.unl()
-        
-        tmp.el[i+'_res_div'].setDisplay(unl)
+        let unl = ! rd.unl()
 
-        tmp.el[i+'_res_desc'].setHTML(rd.desc(gs))
+        tmp.el[i+"_res_div"].setDisplay(unl)
+
+        if (unl) {
+            tmp.el[i+"_res_desc"].setHTML(rd.desc(gs))
+        }
     }
 }
-    
