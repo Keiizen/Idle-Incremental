@@ -4,5 +4,5 @@ function updateData() {
 
 const UPGRADE_IMAGES = {
     stellar: 'stars',
-    rp: 'rp'
+    sm: 'sm'
 }
