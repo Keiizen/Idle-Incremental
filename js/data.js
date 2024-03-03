@@ -169,19 +169,18 @@ function loadGame(start=true, gotNaN=false) {
         
        
        
-       document.onmousemove = e => {
+       /*document.onmousemove = e => {
         tmp.cx = e.clientX
         tmp.cy = e.clientY
-       }
+       }*/
         
        
        setInterval(loop, 1000/FPS)
        
         setInterval(checkNaN,1000)
        
-        setTimeout(()=>{
+        
             tmp.start = true
-        },2000)
 
         
 
