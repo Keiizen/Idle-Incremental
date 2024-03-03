@@ -12,7 +12,7 @@ const TABS = {
 
 
 function updateTabs() {
-    or (i in TABS.tabTable) {
+    for (i in TABS.tabTable) {
         let tab = TABS.tabTable[i]
         tmp.el[tab.Name].setDisplay(tab.Name == player.curtab)
     }
