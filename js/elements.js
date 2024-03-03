@@ -7,7 +7,7 @@ function setupHTML() {
 	setupResourcesHTML()
 	
 
-	/*let main_upgs_table = new Element("main_upgs_table")
+	let main_upgs_table = new Element("main_upgs_table")
 	for (let x = 1; x <= UPGS.main.cols; x++) {
 		let id = UPGS.main.ids[x]
 		table += `<div id="main_upg_${x}_div" style="width: 230px; margin: 0px 10px;"><b>${UPGS.main[x].title}</b><br><br><div style="font-size: 13px; min-height: 50px" id="main_upg_${x}_res"></div><br><div class="table_center" style="justify-content: start;">`
@@ -18,7 +18,7 @@ function setupHTML() {
 		}
 		table += `</div><br><button id="main_upg_${x}_auto" class="btn" style="width: 80px;" onclick="player.auto_mainUpg.${id} = !player.auto_mainUpg.${id}">OFF</button></div>`
 	}
-	main_upgs_table.setHTML(table)*/
+	main_upgs_table.setHTML(table)
 	tmp.el = {}
 	let all = document.getElementsByTagName("*")
 	for (let i=0;i<all.length;i++) {
