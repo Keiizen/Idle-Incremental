@@ -66,7 +66,7 @@ const UPGS = {
                 }
             },
             auto_unl() { return player.rp.points.gte(1e30) },
-            lens: 0,
+            lens: 1,
         },
             1: {
                 unl() { return player.rp.points.gte(1) },
