@@ -17,6 +17,6 @@ function updateTabs() {
         tmp.el[tab.Name].setDisplay(tab.Name == player.curtab)
     }*/
     
-    tmp.el.tab_terminal.setHTML(player.options.hidenav[0] ? "^" : "v")
+    tmp.el.openTabTerminal.setHTML(player.options.hidenav[0] ? "^" : "v")
     tmp.el.hideres.setHTML(player.options.hidenav[1] ? "^" : "v")
 }
