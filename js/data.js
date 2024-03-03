@@ -14,19 +14,35 @@ Decimal.prototype.modular=Decimal.prototype.mod=function (other){
     return this.sub(this.div(other).floor().mul(other));
 };
 
+Decimal.prototype.softcap = function (start, power, mode, dis=false) {
+    var x = this.clone()
+    if (!dis&&x.gte(start)) {
+        if ([0, "pow"].includes(mode)) x = x.div(start).max(1).pow(power).mul(start)
+        if ([1, "mul"].includes(mode)) x = x.sub(start).div(power).add(start)
+        if ([2, "exp"].includes(mode)) x = expMult(x.div(start), power).mul(start)
+        if ([3, "log"].includes(mode)) x = x.div(start).log(power).add(1).mul(start)
+    }
+    return x
+}
+
 Decimal.prototype.format = function (acc=4, max=12) { return format(this.clone(), acc, max) }
 
 Decimal.prototype.formatGain = function (gain, mass=false) { return formatGain(this.clone(), gain, mass) }
 
+function softcapHTML(x, start, invisible=false) { return !invisible&&E(x).gte(start)?` <span class='soft'>(softcapped)</span>`:"" }
+
+Decimal.prototype.softcapHTML = function (start, invisible) { return softcapHTML(this.clone(), start, invisible) }
+
+function calcOverflow(x,y,s,height=1) { return x.gte(s) ? x.max(1).iteratedlog(10,height).div(y.max(1).iteratedlog(10,height)) : E(1) }
+
+String.prototype.corrupt = function (active=true) { return active ? this.strike() + ` <span class='corrupted_text'>[Corrupted]</span>` : this }
+
 function calc(dt) {
     let gs = tmp.gs.mul(dt)
 
-
     if (tmp.pass<=0) {
-        player.stellaritu = player.stellaritu.add(tmp.stellarityGain.mul(gs))
-       
-    }
-
+        player.stellarity = player.stellarity.add(tmp.stellarityGain.mul(gs))
+       }
     tmp.pass = Math.max(0,tmp.pass-1)
 
     player.time += dt
@@ -37,17 +53,19 @@ function calc(dt) {
 
 function getPlayerData() {
     let s = {
-       stellarity: E(0),
+        stellarity: E(0),
         rp: {
             points: E(0),
-            unl: false,
+            unl:false
         },
         options: {
             font: 'Arial',
             notation: 'standard',
+           
             massDis: 0,
+            res_hide: {},
 
-            nav_hide: []
+            nav_hide: [],
         },
         confirms: {},
         offline: {
@@ -55,11 +73,12 @@ function getPlayerData() {
             current: Date.now(),
             time: 0,
         },
+        
         time: 0,
     }
 
+    
    
-        
     return s
 }
 
@@ -70,14 +89,13 @@ function wipe(reload=false) {
         location.reload()
     }
     else player = getPlayerData()
+    save()
 }
 
 function loadPlayer(load) {
     const DATA = getPlayerData()
     player = deepNaN(load, DATA)
     player = deepUndefinedAndDecimal(player, DATA)
-    convertStringToDecimal()
-  
 }
 
 function clonePlayer(obj,data) {
@@ -120,19 +138,13 @@ function deepUndefinedAndDecimal(obj, data) {
     return obj
 }
 
-function convertStringToDecimal() {
-    
-}
-
-//function cannotSave() { return tmp.supernova.reached && player.supernova.times.lt(1) && !quUnl() || tmp.inf_reached && !hasInfUpgrade(16) }
-
 function save(){
     let str = btoa(JSON.stringify(player))
-    if (findNaN(str, true)) return
+    if ( findNaN(str, true)) return
     if (localStorage.getItem("testSave") == '') wipe()
     localStorage.setItem("testSave",str)
     tmp.prevSave = localStorage.getItem("testSave")
-   // if (tmp.saving < 1) {addNotify("Game Saved", 3); tmp.saving++}
+    if (tmp.saving < 1) {addNotify("Game Saved", 3); tmp.saving++}
 }
 
 function load(x){
@@ -145,7 +157,6 @@ function load(x){
 
 
 
-
 function loadGame(start=true, gotNaN=false) {
     if (!gotNaN) tmp.prevSave = localStorage.getItem("testSave")
     wipe()
@@ -154,40 +165,35 @@ function loadGame(start=true, gotNaN=false) {
     if (start) {
         setupHTML()
         setupTooltips()
-    
-       
+        
 
-        setInterval(save,15000)
+        setInterval(save,60000)
         for (let x = 0; x < 5; x++) updateTemp()
 
         updateHTML()
-        updateTooltipResHTML()
 
         let t = (Date.now() - player.offline.current)/1000
         if (player.offline.active && t > 60) simulateTime(t)
 
-        
+        updateTooltipResHTML(true)
+
+        document.onmousemove = e => {
+            tmp.cx = e.clientX
+            tmp.cy = e.clientY
+        }
        
        
-       document.onmousemove = e => {
-        tmp.cx = e.clientX
-        tmp.cy = e.clientY
-       }
-        
-       
-       setInterval(loop, 1000/FPS)
+        setInterval(loop, 1000/FPS)
        
         setInterval(checkNaN,1000)
        
-        
-            /*setTimeout(()=>{
-                tmp.start = true
-            },2500)*/
-
-        
+        setTimeout(()=>{
+            tmp.start = true
+        },2000)
 
        
-}}
+    }
+}
 
 function checkNaN() {
     let naned = findNaN(player)
@@ -225,10 +231,34 @@ function findNaN(obj, str=false, data=getPlayerData(), node='player') {
     return false
 }
 
+function overflow(number, start, power, meta=1){
+	if(isNaN(number.mag))return new Decimal(0);
+	start=Decimal.iteratedexp(10,meta-1,1.0001).max(start);
+	if(number.gte(start)){
+        let s = start.iteratedlog(10,meta)
+		number=Decimal.iteratedexp(10,meta,number.iteratedlog(10,meta).div(s).pow(power).mul(s));
+	}
+	return number;
+}
+
+Decimal.prototype.overflow = function (start, power, meta) { return overflow(this.clone(), start, power, meta) }
+
+function tetraflow(number,start,power) { // EXPERIMENTAL FUNCTION - x => 10^^((slog10(x)-slog10(s))*p+slog10(s))
+    if(isNaN(number.mag))return new Decimal(0);
+	start=E(start);
+	if(number.gte(start)){
+        let s = start.slog(10)
+        // Fun Fact: if 0 < number.slog(10) - start.slog(10) < 1, such like overflow(number,start,power,start.slog(10).sub(1).floor())
+		number=Decimal.tetrate(10,number.slog(10).sub(s).mul(power).add(s))
+	}
+	return number;
+}
+
 Decimal.prototype.addTP = function (val) {
     var e = this.clone()
     return Decimal.tetrate(10, e.slog(10).add(val))
 }
+
 function simulateTime(sec) {
     let ticks = sec * FPS
     let bonusDiff = 0
@@ -240,23 +270,25 @@ function simulateTime(sec) {
     for (let i=0; i<ticks; i++) {
         updateTemp()
         calc(1/FPS+bonusDiff)
+       
     }
 
     let h = `You were gone offline for <b>${formatTime(sec)}</b>.<br>`
 
     let s = {
-        stellarity: player.stellarity.max(1).div(player_before.stellarity.max(1)).log10(),
+        stellarity: player.stellarity.max(1).div(player_before.stellarity.max(1)).log10()
     }
 
     let s2 = {
-        stellarity: player.stellarity.max(1).log10().max(1).div(player_before.stellarity.max(1).log10().max(1)).log10(),
-       
+        stellarity: player.stellarity.max(1).log10().max(1).div(player_before.stellarity.max(1).log10().max(1)).log10()
     }
 
-    // console.log(s2)
+  
 
-    if (s2.stellarity.gte(10)) h += `<br>Your stellarity exponent<sup>2</sup> is increased by <b>${s2.stellarity.format(2)}</b>.`
-    else if (s.stellarity.gte(10)) h += `<br>Your stellarity increased by <b>${s.stellarity.format(2)}</b>.`
+    if (s2.stellarity.gte(10)) h += `<br>Your stellarity’s exponent<sup>2</sup> is increased by <b>${s2.stellarity.format(2)}</b>.`
+    else if (s.mass.gte(10)) h += `<br>Your stellarity’s exponent is increased by <b>${s.stellarity.format(2)}</b>.`
+
+   
 
     createPopup(h,'offline')
 }
