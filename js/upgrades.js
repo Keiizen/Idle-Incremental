@@ -10,7 +10,7 @@ const UPGS = {
             }
         },
         ids: ['stellar', 'rp'],
-        cols: 4,
+        cols: 2,
         over(x,y) { player.main_upg_msg = [x,y] },
         reset() { player.main_upg_msg = [0,0] },
         0: {
