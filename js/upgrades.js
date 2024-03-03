@@ -26,6 +26,7 @@ const UPGS = {
                 }
             },
             auto_unl() { return hasUpgrade('rp', 6)},
+            lens: 15,
             0: {
                 unl() {return true},
                 desc: 'Stellarium boosts itself (log5(x)+1)',
@@ -53,6 +54,7 @@ const UPGS = {
                 }
             },
             auto_unl() { return player.rp.points.gte(1e30) },
+            lens: 15,
         },
             1: {
                 unl() { return player.rp.points.gte(1) },
