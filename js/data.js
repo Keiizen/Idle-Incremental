@@ -178,7 +178,7 @@ function loadGame(start=true, gotNaN=false) {
         setupTooltips()
         
 
-        setInterval(save,60000)
+        setInterval(save,15000)
         for (let x = 0; x < 5; x++) updateTemp()
 
         updateHTML()
