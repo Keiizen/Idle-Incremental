@@ -1,8 +1,8 @@
 const TOOLTIP_RES = {
-    stellarity: {
-        full: "Stellarity",
+    stellarium: {
+        full: "stellarium",
         desc() {
-            let h = `You have <b>${format(player.stellarity)}</b> Stellarity.`
+            let h = `You have <b>${format(player.stellarium)}</b> stellarium.`
 
            
 
@@ -15,7 +15,7 @@ const TOOLTIP_RES = {
         full: "Rage Power",
         desc() {
             let h = `<i>
-            Reach over <b>${format(1e15)}</b> stellarity to reset previous features for Rage Powers.
+            Reach over <b>${format(1e15)}</b> stellarium to reset previous features for Rage Powers.
             </i>`
 
             return h

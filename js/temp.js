@@ -47,8 +47,8 @@ function updateRagePowerTemp() {
     tmp.rp.can = tmp.rp.gain.gte(1)
 }
 
-function updateStellarityTemp() {
-tmp.stellarityGain = FORMS.stellarityGain()
+function updatestellariumTemp() {
+tmp.stellariumGain = FORMS.stellariumGain()
 }
 function updateGamespeedTemp() {
     tmp.gs = FORMS.gameSpeed() 
@@ -57,7 +57,7 @@ function updateTemp() {
     tmp.offlineActive = player.offline.time > 1
     tmp.offlineMult = tmp.offlineActive?player.offline.time+1:1
     updateGamespeedTemp()
-    updateStellarityTemp()
+    updatestellariumTemp()
    updateRagePowerTemp()
    
 }

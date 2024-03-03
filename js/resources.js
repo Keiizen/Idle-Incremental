@@ -1,12 +1,12 @@
 const RESOURCES_DIS = {
-    stellarity: {
+    stellarium: {
         unl: ()=>true,
         icon: "stars",
 
-        desc: (gs)=>format(player.stellarity)+"<br>"+formatGain(player.stellarity, tmp.stellarityGain.mul(gs)),
+        desc: (gs)=>format(player.stellarium)+"<br>"+formatGain(player.stellarium, tmp.stellariumGain.mul(gs)),
     },
     rp: {
-        unl: ()=>player.rp.unl||player.stellarity.gte(2.5e11),
+        unl: ()=>player.rp.unl||player.stellarium.gte(2.5e11),
         icon: "rp",
         class: "red",
 

@@ -129,6 +129,10 @@ button {
 	color: gray
 }
 
+#hideres, #openTabTerminal {
+	position: fixed
+}
+
 
 
 .txt_area {

@@ -16,6 +16,8 @@
         <script src="js/tooltip_res.js"></script>
         <script src="js/Element.js"></script>
         <script src="js/notifs.js"></script>
+        <script src="js/upgrades.js"></script>
+        <script src="js/tabs.js"></script>
     </head>
     <body onload="loadGame()">
         <div id="loading" class="table_center">
@@ -26,11 +28,22 @@
             <div id="notify" class="hide"></div>
             <div id="popups"></div> 
             <div id="tooltip-div"></div>
+            <button id="openTabTerminal" onclick="hidenav(0)"></button>
+            <button id="hideres" onclick="hidenav(1)"></button>
+            <tab id="main_tab">
             <p class="line"></p>
-            <button onclick="hidenav(1)"> < </button>
-            <div id="resources_table"></div>
-            <p class="line"></p>
+            
             <button onclick="wipe()" class="yellow">reset your data</button>
+            <p class="line"></p>
+            <tab id="upgrades_tab">
+                <div id="main_upgs_table"></div>
+            </tab>
+            <div id="tab_terminal">
+                <button onclick="TABS.choose('main')" class="sky">MAIN<br></button>
+                <button onclick="TABS.choose('upgrades')" class="light_red">UPGRADES<br></button>
+            </div>
+            <div id="tab_terminal"></div>
+            <div id="resources_table"></div>
     </div>
     </body>
 </html>
