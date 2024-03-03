@@ -4,8 +4,7 @@ function setupHTML() {
 	
 	
 	//document.getElementById("test").textContent = "No!"
-	
-
+	setupResourcesHTML()
 	tmp.el = {}
 	let all = document.getElementsByTagName("*")
 	for (let i=0;i<all.length;i++) {
@@ -13,7 +12,7 @@ function setupHTML() {
 		tmp.el[x.id] = new Element(x)
 	}
 
-	setupResourcesHTML()
+	
     
 }
 
