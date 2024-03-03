@@ -26,8 +26,8 @@ const UPGS = {
                 }
             },
             auto_unl() { return hasUpgrade('rp', 6)},
-            lens: 15,
-            0: {
+            lens: 1,
+            1: {
                 unl() {return true},
                 desc: 'Stellarium boosts itself (log5(x)+1)',
                 cost: E(250),
@@ -38,6 +38,18 @@ const UPGS = {
                 },
                 effDesc(x=this.effect()) {
                     return formatMult(x)+" Stellarium"
+                }
+            },
+            2: {
+                unl() {return true},
+                desc: '^1.2 gamespeed',
+                cost: E(1e6),
+                effect() {
+                    let ret = 1.2
+                    return ret
+                },
+                effDesc(x=this.effect) {
+                    return "^1.2 gamespeed"
                 }
             }
         },
@@ -54,7 +66,7 @@ const UPGS = {
                 }
             },
             auto_unl() { return player.rp.points.gte(1e30) },
-            lens: 15,
+            lens: 0,
         },
             1: {
                 unl() { return player.rp.points.gte(1) },
