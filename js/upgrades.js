@@ -36,7 +36,7 @@ const UPGS = {
                     return ret
                 },
                 effDesc(x=this.effect()) {
-                    return formatMult(x)
+                    return formatMult(x)+" Stellarium"
                 }
             }
         },
@@ -62,7 +62,9 @@ const UPGS = {
                     let ret = E(10)
                     return ret
                 },
-                
+                effDesc(x=this.effect()) {
+                    return formatMult(x) + " Stellarium"
+                }
             },
          }
          }
