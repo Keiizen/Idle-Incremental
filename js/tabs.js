@@ -16,7 +16,7 @@ function openTabTerminal() {
 function updateTabs() {
     for (i in TABS.tabTable) {
         let tab = TABS.tabTable[i]
-        tmp.el[tab.Name+"_tab"].setDisplay(tab.Name == player.curtab)
+        tmp.el[tab.Name].setDisplay(tab.Name == player.curtab)
     }
     
     tmp.el.tab_terminal.setHTML(player.options.navhide[0] ? "v" : "^")
