@@ -1,11 +1,9 @@
 const TABS = {
     choose(id) {
-        for (i in TABS.tabTable) {
-            let tab = TABS.tabTable[i]
+            let tab = id+"_tab"
             if (tab.Name != player.curtab) {
                 player.curtab = id+'_tab'
             }
-        }
     },
     tabTable: {0: {Name: "main_tab"}, 1: {Name: "upgrades_tab"}}
 }
@@ -18,7 +16,7 @@ function openTabTerminal() {
 function updateTabs() {
     for (i in TABS.tabTable) {
         let tab = TABS.tabTable[i]
-        tmp.el[tab.name+"_tab"].setDisplay(tab.Name == player.curtab)
+        tmp.el[tab.Name+"_tab"].setDisplay(tab.Name == player.curtab)
     }
     
     tmp.el.tab_terminal.setHTML(player.options.navhide[0] ? "v" : "^")
