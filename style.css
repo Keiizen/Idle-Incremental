@@ -141,6 +141,7 @@ button {
 
 #table_resources {
 	display: flex;
+	right: 50px;
 	flex-flow: column wrap;
 	align-content: center;
 	justify-content: center;
