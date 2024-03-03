@@ -1,14 +1,13 @@
 const RESOURCES_DIS = {
     points: {
         unl: ()=>true,
-        icon: "stars",
 
         desc: (gs)=>format(player.points)+"<br>"+formatGain(player.points, tmp.pointGain.mul(gs)),
     },
     sm: {
         unl: ()=>player.sm.unl||player.points.gte(2.5e11),
         icon: "sm",
-        class: "red",
+        class: "yellow",
 
         desc: (gs)=>format(player.sm.points)+"<br>"+(tmp.sm.gain.gte(1e30)?formatGain(player.sm.points, tmp.sm.gain.mul(gs)):"(+"+format(tmp.sm.gain,0)+")"),
     
