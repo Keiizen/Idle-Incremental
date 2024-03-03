@@ -18,12 +18,12 @@ Decimal.prototype.format = function (acc=4, max=12) { return format(this.clone()
 
 Decimal.prototype.formatGain = function (gain, mass=false) { return formatGain(this.clone(), gain, mass) }
 
-/*function calc(dt) {
+function calc(dt) {
     let gs = tmp.gs.mul(dt)
 
 
     if (tmp.pass<=0) {
-        player.points = player.points.add(tmp.pointGain.mul(gs))
+        player.stellaritu = player.stellaritu.add(tmp.stellarityGain.mul(gs))
        
     }
 
@@ -33,7 +33,7 @@ Decimal.prototype.formatGain = function (gain, mass=false) { return formatGain(t
 
    
     
-}*/
+}
 
 function getPlayerData() {
     let s = {
@@ -163,16 +163,16 @@ function loadGame(start=true, gotNaN=false) {
         updateHTML()
         updateTooltipResHTML()
 
-        /*let t = (Date.now() - player.offline.current)/1000
-        if (player.offline.active && t > 60) simulateTime(t)*/
+        let t = (Date.now() - player.offline.current)/1000
+        if (player.offline.active && t > 60) simulateTime(t)
 
         
        
        
-       /*document.onmousemove = e => {
+       document.onmousemove = e => {
         tmp.cx = e.clientX
         tmp.cy = e.clientY
-       }*/
+       }
         
        
        setInterval(loop, 1000/FPS)
@@ -180,7 +180,7 @@ function loadGame(start=true, gotNaN=false) {
         setInterval(checkNaN,1000)
        
         
-            //tmp.start = true
+            tmp.start = true
 
         
 
@@ -227,7 +227,7 @@ Decimal.prototype.addTP = function (val) {
     var e = this.clone()
     return Decimal.tetrate(10, e.slog(10).add(val))
 }
-/*function simulateTime(sec) {
+function simulateTime(sec) {
     let ticks = sec * FPS
     let bonusDiff = 0
     let player_before = clonePlayer(player,getPlayerData());
@@ -243,18 +243,18 @@ Decimal.prototype.addTP = function (val) {
     let h = `You were gone offline for <b>${formatTime(sec)}</b>.<br>`
 
     let s = {
-        points: player.points.max(1).div(player_before.points.max(1)).log10(),
+        stellarity: player.stellarity.max(1).div(player_before.stellarity.max(1)).log10(),
     }
 
     let s2 = {
-        points: player.points.max(1).log10().max(1).div(player_before.points.max(1).log10().max(1)).log10(),
+        stellarity: player.stellarity.max(1).log10().max(1).div(player_before.stellarity.max(1).log10().max(1)).log10(),
        
     }
 
     // console.log(s2)
 
-    if (s2.points.gte(10)) h += `<br>Your points' exponent<sup>2</sup> is increased by <b>${s2.points.format(2)}</b>.`
-    else if (s.points.gte(10)) h += `<br>Your points increased by <b>${s.points.format(2)}</b>.`
+    if (s2.stellarity.gte(10)) h += `<br>Your stellarity exponent<sup>2</sup> is increased by <b>${s2.stellarity.format(2)}</b>.`
+    else if (s.stellarity.gte(10)) h += `<br>Your stellarity increased by <b>${s.stellarity.format(2)}</b>.`
 
     createPopup(h,'offline')
-}*/
+}
