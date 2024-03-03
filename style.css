@@ -130,13 +130,13 @@ button {
 }
 
 #hideres {
-	position: relative;
-	left: 3%;
+	position: absolute;
+	left: 70%;
 	width: 30%;
 	height: 7%;
 }
 #openTabTerminal {
-	position: relative;
+	position: absolute;
 	width: 30%;
 	height: 7%;
 }
