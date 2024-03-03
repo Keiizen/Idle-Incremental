@@ -66,16 +66,18 @@ function getPlayerData() {
             res_hide: {},
 
             hidenav: {
-                0: false,
-                1: false
+                0: true,
+                1: true
             },
         },
+        main_upg_msg: [0,0],
         confirms: {},
         offline: {
             active: true,
             current: Date.now(),
             time: 0,
         },
+        mainUpg : {},
         
         time: 0,
         curtab: "main_tab"

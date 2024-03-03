@@ -49,7 +49,8 @@ function updateHTML() {
 	
 	updateTabs()
 	updateResourcesHTML()
-	tmp.el["resources_table"].setDisplay(player.options.hidenav[1])
+	tmp.el.tab_terminal.setDisplay(!player.options.hidenav[0])
+	tmp.el.resources_table.setDisplay(!player.options.hidenav[1])
 	tmp.el.app.setDisplay(tmp.start)
 	tmp.el.loading.setDisplay(!tmp.start)
 }

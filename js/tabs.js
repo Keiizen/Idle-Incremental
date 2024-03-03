@@ -20,7 +20,7 @@ function updateTabs() {
         let tab = TABS.tabTable[i]
         tmp.el[tab.name+"_tab"].setDisplay(tab.Name == player.curtab)
     }
-    tmp.el.tab_terminal.setDisplay(player.options.hidenav[0])
+    
     tmp.el.tab_terminal.setHTML(player.options.navhide[0] ? "v" : "^")
     tmp.el.hideres.setHTML(player.options.navhide[1] ? "v" : "^")
 }
