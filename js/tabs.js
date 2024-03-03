@@ -1,11 +1,11 @@
 const TABS = {
     choose(id) {
-            let tab = id+"_tab"
+            /*let tab = id+"_tab"
             if (tab != player.curtab) {
                 player.curtab = tab
-            }
+            }*/
     },
-    tabTable: {0: {Name: "main_tab"}, 1: {Name: "upgrades_tab"}}
+    //tabTable: {0: {Name: "main_tab"}, 1: {Name: "upgrades_tab"}}
 }
 
 

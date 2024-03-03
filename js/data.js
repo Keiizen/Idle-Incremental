@@ -153,7 +153,6 @@ function save(){
     if (localStorage.getItem("testSave") == '') wipe()
     localStorage.setItem("testSave",str)
     tmp.prevSave = localStorage.getItem("testSave")
-    if (tmp.saving < 1) {addNotify("Game Saved", 3); tmp.saving++}
 }
 
 function load(x){
@@ -299,5 +298,5 @@ function simulateTime(sec) {
 
    
 
-    createPopup(h,'offline')
+    
 }
