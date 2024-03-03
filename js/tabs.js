@@ -1,7 +1,7 @@
 const TABS = {
     choose(id) {
             let tab = id+"_tab"
-            if (tab.Name != player.curtab) {
+            if (tab != player.curtab) {
                 player.curtab = id+'_tab'
             }
     },
