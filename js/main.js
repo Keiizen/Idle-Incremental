@@ -45,7 +45,8 @@ const FORMS = {
     },
     gameSpeed() {
         let gs = E(1)
-        if (player.stellarity.gte(10)) gs = gs.add(player.stellarity.log(10))
+        gs = gs.add(player.stellarity.log(10).add(1))
+        gs = gs.mul(player.stellarity.log(1000).add(1))
         return gs
     }
   }
@@ -222,6 +223,6 @@ function capitalFirst(str) {
 
 
 setInterval(()=>{
-    player.stellarity = player.stellarity.add(tmp.stellarityGain.mul(tmp.gs)).div(8)
+    player.stellarity = player.stellarity.add(tmp.stellarityGain.mul(tmp.gs).div(8))
     
 },125)
