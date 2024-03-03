@@ -19,5 +19,4 @@ function updateTabs() {
     }
     
     tmp.el.openTabTerminal.setHTML(player.options.hidenav[0] ? "Open Terminal" : "Close Terminal")
-    tmp.el.hideres.setHTML(player.options.hidenav[1] ? "Open Resources" : "Close Resources")
 }
