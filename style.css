@@ -137,9 +137,9 @@ button {
 #table_resources {
 	display: flex;
 	flex-flow: column wrap;
-	align-content: start;
-	justify-content: start;
-	width: 100%;
+	align-content: center;
+	justify-content: center;
+	width: calc(100% - 100px);
 	min-height: 110px;
 	max-height: 115px;
 	margin: 5px 0px;
