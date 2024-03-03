@@ -63,6 +63,6 @@ function updateTemp() {
     updateGamespeedTemp()
     updatePointTemp()
     updateSolarMatterTemp()
-    //updateUpgradesTemp()
+    updateUpgradesTemp()
    
 }

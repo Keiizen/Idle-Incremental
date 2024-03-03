@@ -9,27 +9,27 @@ const UPGS = {
                 }
             }
         },
-        ids: [null,'stellar', 'sm',],
+        ids: [null,'points', 'sm',],
         cols: 2,
         over(x,y) { player.main_upg_msg = [x,y] },
         reset() { player.main_upg_msg = [0,0] },
         1: {
-            title: "Stellar Upgrades",
-            res: "points",
+            title: "Point Upgrades",
+            res: "Points",
             getRes() {return player.points},
             unl() { return true },
             can(x) { return player.points.gte(this[x].cost) && !player.mainUpg.stellar.includes(x) },
             buy(x) {
                 if (this.can(x)) {
                     player.points = player.points.sub(this[x].cost)
-                    player.mainUpg.stellar.push(x)
+                    player.mainUpg.points.push(x)
                 }
             },
-            auto_unl() { return hasUpgrade('sm', 6)},
+            auto_unl() { return /*hasUpgrade('sm', 6)*/false},
             lens: 2,
             1: {
                 unl() {return true},
-                desc: 'points boosts itself (log5(x)+1)',
+                desc: 'Points boosts itself (log5(x)+1)',
                 cost: E(250),
                 effect() {
                     let ret = player.points.log(5).add(1)
@@ -65,12 +65,12 @@ const UPGS = {
                     player.mainUpg.sm.push(x)
                 }
             },
-            auto_unl() { return player.sm.points.gte(1e30) },
+            auto_unl() { return /*player.sm.points.gte(1e30)*/ false },
             lens: 1,
         },
             1: {
                 unl() { return player.sm.points.gte(1) },
-                desc: "points is boosted by x10",
+                desc: "Points are boosted by x10",
                 cost: E(1),
                 effect() {
                     let ret = E(10)
@@ -80,6 +80,18 @@ const UPGS = {
                     return formatMult(x) + " points"
                 }
             },
+            2: {
+                unl() { return hasUpgrade('sm',1) && player.sm.points.gte(3)},
+                desc: "x1.5 Solar Matter",
+                cost: E(3),
+                effect() {
+                    let ret = E(1.5)
+                    return ret
+                },
+                effDesc(x=this.effect()) {
+                    return formatMult(x) + " Solar Matter"
+                }
+            }
          }       
         }
 function hasUpgrade(id,x) { return player.mainUpg[id].includes(x) }
