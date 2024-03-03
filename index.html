@@ -17,25 +17,30 @@
         <script src="js/Element.js"></script>
         <script src="js/tabs.js"></script>
         <script src="js/x.js"></script>
+        <script src="js/upgrades.js"></script>
     </head>
     <body onload="loadGame()">
         <div id="loading" class="table_center">
             <div style="font-size: 20px;">Idle Incremental<br></div>
             <div style="font-size: 16px;">Loading...</div>
         </div>
-        <button onclick="wipe()">wipe data</button>
+        
         <div id="app" style="display: none">
             <div id="notify" class="hide"></div>
             <div id="popups"></div> 
             <div id="tooltip-div"></div>
             
                 <button id="openTabTerminal" onclick="navhide(0)">Open Terminal</button>
-                
+                <p class="line"></p>
             
             <tab id="main_tab">
             
             <button onclick="wipe()" class="yellow">reset your data</button>
-            
+            <div>
+                <div id="building_points_1"></div>
+                <div id="building_points_2"></div>
+                <div id="building_points_3"></div>
+            </div>
             </tab>
             <tab id="upgrades_tab">
                 <div id="main_upg_msg" style="min-height:100px;"></div>

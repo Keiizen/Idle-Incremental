@@ -224,6 +224,6 @@ function capitalFirst(str) {
 
 
 setInterval(()=>{
-    player.points = player.points.add(tmp.pointsGain.mul(tmp.gs).div(16))
+    player.points = player.points.add(tmp.pointGain.mul(tmp.gs).div(16))
     
 },62.5)
