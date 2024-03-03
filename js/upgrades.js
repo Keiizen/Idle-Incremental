@@ -1,4 +1,4 @@
-const UPGS = {
+/*const UPGS = {
    
     main: {
         temp() {
@@ -89,4 +89,4 @@ function resetMainUpgs(id,keep=[]) {
     let id2 = UPGS.main.ids[id]
     for (let x = 0; x < player.mainUpg[id2].length; x++) if (keep.includes(player.mainUpg[id2][x])) k.push(player.mainUpg[id2][x])
     player.mainUpg[id2] = k
-}
+}*/
