@@ -13,6 +13,7 @@ function updatePopupIndex() {
 }
 
 function addNotify(text, duration=3) {
+    tmp.notify = {}
     tmp.notify.push({text: text, duration: duration});
     if (tmp.notify.length == 1) updateNotify()
 }

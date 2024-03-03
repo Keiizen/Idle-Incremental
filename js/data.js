@@ -99,7 +99,6 @@ function wipe(reload=false) {
         location.reload()
     }
     else player = getPlayerData()
-    save()
 }
 
 function loadPlayer(load) {

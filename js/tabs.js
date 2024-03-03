@@ -12,10 +12,10 @@ const TABS = {
 
 
 function updateTabs() {
-    for (i in TABS.tabTable) {
+    /*for (i in TABS.tabTable) {
         let tab = TABS.tabTable[i]
         tmp.el[tab.Name].setDisplay(tab.Name == player.curtab)
-    }
+    }*/
     
     tmp.el.tab_terminal.setHTML(player.options.hidenav[0] ? "^" : "v")
     tmp.el.hideres.setHTML(player.options.hidenav[1] ? "^" : "v")
