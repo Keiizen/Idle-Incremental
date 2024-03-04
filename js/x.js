@@ -3,6 +3,6 @@ function updateData() {
 }
 
 const UPGRADE_IMAGES = {
-    stellar: 'stars',
+    points: 'stars',
     sm: 'sm'
 }
