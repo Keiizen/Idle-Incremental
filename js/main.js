@@ -28,14 +28,14 @@ const FORMS = {
     sm: {
         gain() {
            
-            let gain = player.points.div(1e15).root(2)
+            let gain = player.points.div(1e14).root(2)
            
             return gain.floor()
         },
         reset() {
             if (tmp.sm.can) {
                 FORMS.sm.doReset()
-                
+                addNotify(`Successfully did Solarity for +${format(tmp.sm.gain)} Solar Matter`)
             }
         },
         doReset() {
