@@ -9,8 +9,8 @@ const UPGS = {
                 }
             }
         },
-        ids: [null,'points', 'sm',],
-        cols: 2,
+        ids: [null,'points', 'sm', 'nm'],
+        cols: 3,
         over(x,y) { player.main_upg_msg = [x,y] },
         reset() { player.main_upg_msg = [0,0] },
         1: {
@@ -51,7 +51,7 @@ const UPGS = {
                 effDesc(x=this.effect) {
                     return "^1.2 gamespeed"
                 }
-            }
+            },
         },
         2: {
             title: "Solar Upgrades",
@@ -66,7 +66,7 @@ const UPGS = {
                 }
             },
             auto_unl() { return /*player.sm.points.gte(1e30)*/ false },
-            lens: 1,
+            lens: 2,
         },
             1: {
                 unl() { return player.sm.points.gte(1) },
@@ -92,7 +92,23 @@ const UPGS = {
                     return formatMult(x) + " Solar Matter"
                 }
             }
-         }       
+         },
+         3: {
+            title: "Void Upgrades",
+            res: "Null Matter",
+            getRes() {return player.nm.points},
+            unl() {return player.nm.unl},
+            can(x) {return player.nm.points.gte(this[x].cost) && !player.mainUpg.nm.includes(x)},
+            buy(x) {
+                if (this.can(x)) {
+                    player.nm.points = player.nm.points.sub(this[x].cost)
+                    player.mainUpg.nm.push(x)
+                }
+            },
+            auto_unl() {return false},
+            lens: 0,
+            
+         }
         }
 function hasUpgrade(id,x) { return player.mainUpg[id].includes(x) }
 function upgEffect(id,x,def=E(1)) { return tmp.upgs.main[id][x]?tmp.upgs.main[id][x].effect:def }

@@ -19,7 +19,15 @@ const TOOLTIP_RES = {
             </i>`
 
             return h
-        },
+        }
+    },
+    nm: {
+        full: "Null Matter",
+        desc() {
+            let h = `<i>Reach <b>${format(1e55)}</b> Points to reset previous features for Null Matter.</i>`
+
+            return h
+        }
     },
     gamespeed: {
         full: "Game Speed",

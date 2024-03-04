@@ -13,6 +13,13 @@ const RESOURCES_DIS = {
     
         resetBtn() { FORMS.sm.reset() },
     },
+    nm: {
+        unl: ()=>player.nm.unl||player.points.gte(1e50),
+        icon: "nullmatter",
+        class: "grey",
+        desc: (gs)=>format(player.nm.points)+"<br>"+(hasUpgrade('nm',10)?formatGain(player.nm.points, tmp.nm.gain.mul(gs)):"(+"+format(tmp.nm.gain,0)+")"),
+        resetBtn() {FORMS.nm.reset()}
+    },
     gamespeed: {
         unl: ()=>true,
         icon: "time",

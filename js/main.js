@@ -34,13 +34,33 @@ const FORMS = {
         },
         reset() {
             if (tmp.sm.can) {
-                FORMS.sm.doReset()
                 addNotify(`Successfully did Solarity for +${format(tmp.sm.gain)} Solar Matter`)
+                FORMS.sm.doReset()
             }
         },
         doReset() {
            player.points=E(0)
+           for (let x = 1; x < 3; x++) {
+            BUILDINGS.reset('points_'+x)
+           }
            player.sm.points = player.sm.points.add(tmp.sm.gain)
+        }
+    },
+    nm: {
+        gain() {
+            let gain = player.points.div(1e55).root(2.175)
+            return gain.floor()
+        },
+        reset() {
+            if (tmp.nm.can) {
+                addNotify(`Successfully nullified for +${format(tmp.nm.gain)}`)
+                FORMS.nm.doReset()
+            }
+        },
+        doReset() {
+            FORMS.sm.doReset()
+            player.sm.points = E(0)
+            player.nm.points = player.nm.points.add(tmp.nm.gain)
         }
     },
     gameSpeed() {
@@ -65,7 +85,7 @@ function loop() {
 function turnOffline() {
 player.offline.active = !player.offline.active}
 
-function format(ex, acc=4, max=12, type=player.options.notation) {
+function format(ex, acc=3, max=12, type=player.options.notation) {
     
 
     ex = E(ex)

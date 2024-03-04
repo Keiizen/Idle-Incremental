@@ -39,12 +39,24 @@ function resetTemp() {
     tmp.el = keep[0]
     tmp.prevSave = keep[1]
     tmp.notify = {}
+
+    for (let x in BUILDINGS_DATA) tmp.build[x] = {
+        bulk: E(0),
+		total: E(0),
+		bonus: E(0),
+        effect: {},
+    }
 }
 
 function updateSolarMatterTemp() {
     if (!tmp.sm) tmp.sm = {}
     tmp.sm.gain = FORMS.sm.gain()
     tmp.sm.can = tmp.sm.gain.gte(1)
+}
+function updateNullMatterTemp() {
+    if (!tmp.nm) tmp.nm = {}
+    tmp.nm.gain = FORMS.nm.gain()
+    tmp.nm.can = tmp.gain.gte(1)
 }
 
 function updateUpgradesTemp() {
@@ -63,6 +75,8 @@ function updateTemp() {
     updateGamespeedTemp()
     updatePointTemp()
     updateSolarMatterTemp()
+    updateNullMatterTemp()
     updateUpgradesTemp()
+    BUILDINGS.temp()
    
 }
