@@ -31,6 +31,13 @@
             <div id="tooltip-div"></div>
             
                 <button id="openTabTerminal" onclick="navhide(0)">Open Terminal</button>
+                <div id="tab_terminal">
+                    <button onclick="TABS.choose('main')" class="sky">MAIN</button>
+                    <p class="line"></p>
+                    <button onclick="TABS.choose('upgrades')" class="light_red">UPGRADES</button>
+                    <p class="line"></p>
+                    <button onclick="TABS.choose('resources')" class="cyan">RESOURCES</button>
+                </div>
                 <p class="line"></p>
                 <button id="wipedata" onclick="wipe()">wipe data</button>
             <tab id="main_tab">
@@ -46,13 +53,6 @@
                 <div id="main_upg_msg" style="min-height:100px;"></div>
                 <div id="main_upgs_table" class="table_center"></div>
             </tab>
-            <div id="tab_terminal">
-                <button onclick="TABS.choose('main')" class="sky">MAIN</button>
-                <p class="line"></p>
-                <button onclick="TABS.choose('upgrades')" class="light_red">UPGRADES</button>
-                <p class="line"></p>
-                <button onclick="TABS.choose('resources')" class="cyan">RESOURCES</div>
-            </div>
                 <div id="resources_tab">
                     <div id="resources_table"></div>
                 </div>
