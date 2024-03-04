@@ -243,7 +243,7 @@ const BUILDINGS = {
 
 // Config (custom cost, etc.)
 function getPointUpgradeCost(lvl, start, inc, pow) {
-    return Decimal.pow(Decimal.mul(start, inc.pow(lvl)), pow)
+    return Decimal.pow(Decimal.mul(start, Decimal.pow(inc, lvl)), pow)
 }
 function checkBuildings() {
     let b
