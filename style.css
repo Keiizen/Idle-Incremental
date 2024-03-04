@@ -1,7 +1,7 @@
-* {
+/** {
 	table-align: center;
 	text-align: center;
-}
+}*/
 
 
 p {
@@ -137,7 +137,6 @@ button {
 }
 #tab_terminal {
 	position: fixed;
-	bottom: 30%;
 	width: 40%;
 	height: 100%;
 }
