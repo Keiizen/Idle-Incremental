@@ -132,6 +132,7 @@ button {
 
 #openTabTerminal {
 	position: absolute;
+	left: 70%;
 	width: 30%;
 	height: 7%;
 }
@@ -139,6 +140,12 @@ button {
 	position: fixed;
 	width: 40%;
 	height: 100%;
+}
+#wipedata {
+	position: absolute;
+	left: 30%;
+	width: 20%;
+	height: 6.66%;
 }
 
 
