@@ -262,7 +262,7 @@ function getPointUpgradeCost(lvl, start, inc, pow) {
     return Decimal.pow(Decimal.mul(start, Decimal.pow(inc, lvl)), pow)
 }
 function checkBuildings() {
-    let b
+/*  let b
 
    
     if (player.pointUpg) for (let x = 1; x <= 3; x++) {
@@ -277,6 +277,5 @@ function checkBuildings() {
 
         player.autoPointUpg[x] = false
     }
-
-
+*/
 }
