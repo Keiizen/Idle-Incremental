@@ -77,7 +77,7 @@ const BUILDINGS_DATA = {
 }
 
 const BUILDINGS_ORDER = [
-    
+    'points_1'
 ]
 
 Object.keys(BUILDINGS_DATA).forEach(i => {
