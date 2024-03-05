@@ -213,7 +213,7 @@ const BUILDINGS = {
     //DOM
 	setup() {
 		for (var [i, b] of Object.entries(BUILDINGS_DATA)) {
-            let el = new Element("building_"+i)
+            /*let el = new Element("building_"+i)
 
 			if (el.el) el.setHTML(`<div class="table_center upgrade" style="width: 100%; margin-bottom: 5px;">
 				<div style="width: 300px">
@@ -229,7 +229,7 @@ const BUILDINGS = {
 					Power: <span id="building_pow_${i}"></span><br>
 					Effect: <span id="building_eff_${i}"></span>
 				</div>
-			</div>`)
+			</div>`)*/
 		}
 	},
 	update(i) {
