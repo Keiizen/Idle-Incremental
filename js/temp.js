@@ -40,12 +40,12 @@ function resetTemp() {
     tmp.prevSave = keep[1]
     tmp.notify = {}
 
-    for (let x in BUILDINGS_DATA) tmp.build[x] = {
+    /*for (let x in BUILDINGS_DATA) tmp.build[x] = {
         bulk: E(0),
 		total: E(0),
 		bonus: E(0),
         effect: {},
-    }
+    }*/
 }
 
 function updateSolarMatterTemp() {
@@ -77,6 +77,6 @@ function updateTemp() {
     updateSolarMatterTemp()
     updateNullMatterTemp()
     updateUpgradesTemp()
-    BUILDINGS.temp()
+    //BUILDINGS.temp()
    
 }

@@ -28,7 +28,7 @@ function setupHTML() {
 		let x = all[i]
 		tmp.el[x.id] = new Element(x)
 	}
-	BUILDINGS.setup()
+	/*BUILDINGS.setup()*/
     
 }
 
@@ -78,7 +78,7 @@ function updateHTML() {
 	tmp.el.tab_terminal.setDisplay(!player.options.hidenav[0])
 	tmp.el.app.setDisplay(tmp.start)
 	tmp.el.loading.setDisplay(!tmp.start)
-	for (let x = 1; x < 3; x++) {
+	/*for (let x = 1; x < 3; x++) {
 		BUILDINGS.update('points_'+x)
-	}
+	}*/
 }

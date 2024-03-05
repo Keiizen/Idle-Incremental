@@ -143,10 +143,10 @@ function getPlayerData() {
         build: {}
     }
 
-    for (let x in BUILDINGS_DATA) s.build[x] = {
+    /*for (let x in BUILDINGS_DATA) s.build[x] = {
         amt: E(0),
         auto: false,
-    }
+    }*/
     for (let x = 1; x <= UPGS.main.cols; x++) {
         s.auto_mainUpg[UPGS.main.ids[x]] = false
         s.mainUpg[UPGS.main.ids[x]] = []
