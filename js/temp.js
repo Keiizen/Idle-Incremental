@@ -77,6 +77,6 @@ function updateTemp() {
     updateSolarMatterTemp()
     updateNullMatterTemp()
     updateUpgradesTemp()
-    //BUILDINGS.temp()
+    BUILDINGS.temp()
    
 }

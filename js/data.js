@@ -130,7 +130,7 @@ function getPlayerData() {
         auto_mainUpg: {},
         time: 0,
         curtab: "main_tab",
-        pointUpg: {1: E(0),2:E(0),3:E(0)},
+        pointUpg: {1:E(0),2:E(0),3:E(0)},
         autoPointUpg: {1:false,2:false,3:false},
         build: {}
     }
