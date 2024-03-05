@@ -215,7 +215,7 @@ const BUILDINGS = {
 		for (var [i, b] of Object.entries(BUILDINGS_DATA)) {
             let el = new Element("building_"+i)
 
-			if (el.el) el.setHTML(`<div class="table_center upgrade" style="width: 100%; margin-bottom: 5px;">
+			if (tmp.el.el) el.setHTML(`<div class="table_center upgrade" style="width: 100%; margin-bottom: 5px;">
 				<div style="width: 300px">
 					<div class="resources">
 						<img src="images/buildings/${b.icon||"mark"}.png">
