@@ -23,7 +23,7 @@ const BUILDINGS_DATA = {
             let start = 10
             let inc = 1.5
             let pow = 1
-            if (player.mass.gte(Decimal.pow(10,start))) bulk = player.mass.max(1).log10().div(start).max(1).log(inc).max(0).root(pow).add(1).floor()
+            //if (player.mass.gte(Decimal.pow(10,start))) bulk = player.mass.max(1).log10().div(start).max(1).log(inc).max(0).root(pow).add(1).floor()
             return bulk
         },
 
@@ -68,7 +68,7 @@ const BUILDINGS_DATA = {
             let start = 100
             let inc = 4
             let pow = 1
-            if (player.points.gte(Decimal.pow(10,start))) bulk = player.points.max(1).log10().div(start).max(1).log(inc).max(0).root(pow).add(1).floor()
+            //if (player.points.gte(Decimal.pow(10,start))) bulk = player.points.max(1).log10().div(start).max(1).log(inc).max(0).root(pow).add(1).floor()
 
             return bulk
         },
@@ -108,7 +108,7 @@ const BUILDINGS_DATA = {
             let start = 1e339
             let inc = 172.53
             let pow = 1
-            if (player.mass.gte(Decimal.pow(10,start))) bulk = player.mass.max(1).log10().div(start).max(1).log(inc).max(0).root(pow).add(1).floor()
+            //if (player.mass.gte(Decimal.pow(10,start))) bulk = player.mass.max(1).log10().div(start).max(1).log(inc).max(0).root(pow).add(1).floor()
             return bulk
         },
         get_cost: x => format(x) + " Points",
