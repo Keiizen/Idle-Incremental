@@ -47,6 +47,7 @@ const BUILDINGS_DATA = {
     get noSpend() { return false},
     get res() { return player.points },
     set res(v) { player.points = v },
+    get beMultiplicative() {return false},
     cost(x=this.level) {
         let start = 10
         let inc = 1.5
