@@ -45,7 +45,7 @@ const UPGS = {
                 desc: '^1.2 gamespeed',
                 cost: E(1e6),
                 effect() {
-                    let ret = 1.2
+                    let ret = E(1.2)
                     return ret
                 },
                 effDesc(x=this.effect) {
@@ -106,7 +106,13 @@ const UPGS = {
                 }
             },
             auto_unl() {return false},
-            lens: 0,
+            lens: 1,
+            1: {
+                unl(){return this.unl()},
+                desc: "'Obelisk' remains permanently unlocked.",
+                cost: E(1)
+
+            }
             
          }
         }

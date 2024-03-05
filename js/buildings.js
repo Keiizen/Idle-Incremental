@@ -19,7 +19,12 @@ const BUILDINGS_DATA = {
             return getPointUpgradeCost(x, start, inc, pow)
         },
         get bulk() { 
-            return E(0)
+            let bulk = E(0)
+            let start = 10
+            let inc = 1.5
+            let pow = 1
+            if (player.mass.gte(Decimal.pow(10,start))) bulk = player.mass.max(1).log10().div(start).max(1).log(inc).max(0).root(pow).add(1).floor()
+            return bulk
         },
 
         get_cost: x => format(x) + " Points",
@@ -59,7 +64,13 @@ const BUILDINGS_DATA = {
             return getPointUpgradeCost(x, start, inc, pow)
         },
         get bulk() {
-            return E(0)
+            let bulk = E(0)
+            let start = 100
+            let inc = 4
+            let pow = 1
+            if (player.points.gte(Decimal.pow(10,start))) bulk = player.points.max(1).log10().div(start).max(1).log(inc).max(0).root(pow).add(1).floor()
+
+            return bulk
         },
         get_cost: x => format(x) + " Points",
         get beMultiplicative() {return false},
@@ -87,13 +98,18 @@ const BUILDINGS_DATA = {
         get res() {return player.points},
         set res(v) {player.points=v},
         cost(x=this.level) {
-            let start = E(1e33)
-            let inc = E(172.53)
-            let pow = E(1)
+            let start = 1e33
+            let inc = 172.53
+            let pow = 1
             return getPointUpgradeCost(x, start, inc, pow)
         },
         get bulk() {
-            return E(0)
+            let bulk
+            let start = 1e339
+            let inc = 172.53
+            let pow = 1
+            if (player.mass.gte(Decimal.pow(10,start))) bulk = player.mass.max(1).log10().div(start).max(1).log(inc).max(0).root(pow).add(1).floor()
+            return bulk
         },
         get_cost: x => format(x) + " Points",
         get beMultiplicative() {return false},
