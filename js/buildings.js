@@ -1,139 +1,83 @@
+/* BUILDINGS.JS: ORIGINAL BY AAREX AND MRREDSHARK77 */
 
 const BUILDINGS_DATA = {
-    points_1: {
-        name: "Power",
-
-        get isUnlocked() { return true },
-        get autoUnlocked() { return hasUpgrade('sm',4) },
-        get noSpend() { return hasUpgrade('sm',8) },
-
-        get res() { return player.points },
-        set res(v) { player.points = v },
-
-        cost(x=this.level) { 
-            let start = E(10)
-            let inc = E(1.5)
-            let pow = E(1)
-            if (x.gte(100)) pow = pow.add(.125)
-
-            return getPointUpgradeCost(x, start, inc, pow)
-        },
-        get bulk() { 
-            let bulk = E(0)
-            let start = 10
-            let inc = 1.5
-            let pow = 1
-            //if (player.mass.gte(Decimal.pow(10,start))) bulk = player.mass.max(1).log10().div(start).max(1).log(inc).max(0).root(pow).add(1).floor()
-            return bulk
-        },
-
-        get_cost: x => format(x) + " Points",
-
-        get beMultiplicative() { return false },
-
-        effect(x) {
-            let power = E(1)
-            power = power.mul(BUILDINGS.eff('points_2'))
-
-            let effect = power.mul(x)
-           
-
-            return {power, effect}
-        },
-
-        get bonus() {
-            let x = E(0)
-           
-            return x
-        },
-
-        get_power: x => "+"+format(x.power),
-        get_effect: x => "+"+format(x.effect)+" to point gain",
-    },
-    points_2: {
-        name: "Charger",
-        get isUnlocked() {return hasUpgrade('points',2)},
-        get AutoUnlocked() {return hasUpgrade('sm',4)},
-        get noSpend() {return hasUpgrade('sm',8)},
-        get res() {return player.points},
-        set res(v) {player.points = v},
-        cost(x=this.level) {
-            let start = E(100)
-            let inc = E(4)
-            let pow = E(1)
-            return getPointUpgradeCost(x, start, inc, pow)
-        },
-        get bulk() {
-            let bulk = E(0)
-            let start = 100
-            let inc = 4
-            let pow = 1
-            //if (player.points.gte(Decimal.pow(10,start))) bulk = player.points.max(1).log10().div(start).max(1).log(inc).max(0).root(pow).add(1).floor()
-
-            return bulk
-        },
-        get_cost: x => format(x) + " Points",
-        get beMultiplicative() {return false},
-        effect(x) {
-            let step = E(2)
-            step = step.pow(BUILDINGS.eff('points_3'))
-
-            let ret = step.mul(x).add(1)
-
-            return {power: step, effect: ret}
-        },
-        get bonus() {
-            let x = E(0)
-
-            return x
-        },
-        get_power: x => "+"+formatMult(x.power),
-        get_effect: x => "+"+formatMult(x.effect) + " to Power's effect"
-    },
-    points_3: {
-        name: "Obelisk",
-        get isUnlocked() {return hasUpgrade('sm',5)},
-        get autoUnlocked() {return hasUpgrade('nm',2)},
-        get noSpend() {return hasUpgrade('nm',5)},
-        get res() {return player.points},
-        set res(v) {player.points=v},
-        cost(x=this.level) {
-            let start = 1e33
-            let inc = 172.53
-            let pow = 1
-            return getPointUpgradeCost(x, start, inc, pow)
-        },
-        get bulk() {
-            let bulk
-            let start = 1e339
-            let inc = 172.53
-            let pow = 1
-            //if (player.mass.gte(Decimal.pow(10,start))) bulk = player.mass.max(1).log10().div(start).max(1).log(inc).max(0).root(pow).add(1).floor()
-            return bulk
-        },
-        get_cost: x => format(x) + " Points",
-        get beMultiplicative() {return false},
-        effect(x) {
-            let step = E(1.25)
-
-            let ret = step.mul(x).add(1)
-            return {power: step, effect: ret}
-        },
-        get bonus() {
-            let x = E(0)
-
-            return x
-        },
-        get_power: x => "^"+format(x.power),
-        get_effect: x => "Charger's effect is raised by " + format(x.effect)
-    }
    
-		
-       
+   
+    /*
+    name: {
+        name: "Placeholder",
+		icon: "placeholder", or none
+
+        get isUnlocked() { return false },
+        get autoUnlocked() { return false },
+        get noSpend() { return false },
+
+        get res() { return player.mass },
+        set res(v) { player.mass = v },
+
+        cost(x=this.level) {
+            return EINF
+        },
+        get bulk() {
+            return E(0)
+        },
+
+        get_cost: x => format(x,0),
+
+        effect(x, bonus) {
+            let pow = E(1)
+            let eff = E(1)
+            return {power: pow, effect: eff}
+        },
+
+        get bonus() {
+            let x = E(0)
+
+            return x
+        },
+
+        get_power: x => formatMult(x.power),
+        get_effect: x => formatMult(x.effect),
+    },
+    */
+   points_1: {
+    name: "Empowerer",
+    get isUnlocked() { return true },
+    get autoUnlocked() { return false },
+    get noSpend() { return false},
+    get res() { return player.points },
+    set res(v) { player.points = v },
+    cost(x=this.level) {
+        let start = 10
+        let inc = 1.5
+        let pow = 1
+        return Decimal.pow(Decimal.mul(start, Decimal.pow(inc, x)), pow)
+    },
+    get bulk() {
+        return E(9)
+    },
+    get_cost: x => format(x) + " Points",
+    effect(x) {
+        let pow = E(1)
+        let eff = pow.mul(x)
+        return {power: pow, effect: eff}
+    },
+    get bonus() {
+        let x = E(0)
+
+        return x
+    },
+    get_power: x => "+" + format(x) + " to point gain",
+    get_effect: x => "+" + format(x) + " point gain"
+
+
+   }
+
+
 }
 
 const BUILDINGS_ORDER = [
-    'points_3', 'points_2', 'points_1'
+    
 ]
 
 Object.keys(BUILDINGS_DATA).forEach(i => {
@@ -198,7 +142,7 @@ const BUILDINGS = {
             b.level = b.level.add(1)
         }
 
-       
+        console.log()
 
 		if (!b.noSpend && b.res.gt(cost)) {
 			b.res = b.res.sub(cost).max(0) // without .max(0) causes NaN because of negative amount
@@ -213,13 +157,13 @@ const BUILDINGS = {
     //DOM
 	setup() {
 		for (var [i, b] of Object.entries(BUILDINGS_DATA)) {
-            /*let el = new Element("building_"+i)
+            let el = new Element("building_"+i)
 
 			if (el.el) el.setHTML(`<div class="table_center upgrade" style="width: 100%; margin-bottom: 5px;">
 				<div style="width: 300px">
 					<div class="resources">
-						<img src="images/buildings/${b.icon||"mark"}.png">
-						<span style="margin-left: 5px; text-align: left;"><span id="building_scale_${i}"></span>${b.name} [<span id="building_lvl_${i}"></span>]</span>
+						<img src="images/buildings/${b.icon}.png">
+						
 					</div>
 				</div>
 				<button class="btn" id="building_btn_${i}" onclick="BUILDINGS.buy('${i}')" style="width: 300px"><span id="building_cost_${i}"></span></button>
@@ -229,7 +173,7 @@ const BUILDINGS = {
 					Power: <span id="building_pow_${i}"></span><br>
 					Effect: <span id="building_eff_${i}"></span>
 				</div>
-			</div>`)*/
+			</div>`)
 		}
 	},
 	update(i) {
@@ -240,7 +184,7 @@ const BUILDINGS = {
         if (!unl) return;
 		
         tmp.el["building_lvl_"+i].setHTML(b.level.format(0) + (bt.bonus.gt(0) ? (b.beMultiplicative ? " × " : " + ") + bt.bonus.format(0) : "")) //  + " = " + bt.total.format(0)
-        /*tmp.el["building_scale_"+i].setHTML(b.scale ? getScalingName(b.scale) : "")*/
+       
 
         let cost = b.cost(), allow = b.allowPurchase ?? true
 
@@ -258,24 +202,90 @@ const BUILDINGS = {
 }
 
 // Config (custom cost, etc.)
-function getPointUpgradeCost(lvl, start, inc, pow) {
-    return Decimal.pow(Decimal.mul(start, Decimal.pow(inc, lvl)), pow)
-}
+
 function checkBuildings() {
-/*  let b
+    /*let b
 
-   
-    if (player.pointUpg) for (let x = 1; x <= 3; x++) {
-        b = player.build['points_'+x]
+    // Mass Upgrades
+    if (player.massUpg) for (let x = 1; x <= 4; x++) {
+        b = player.build['mass_'+x]
 
-        if (b.amt.lte(0) && player.pointUpg[x] && Decimal.gt(player.pointUpg[x],0)) {
-            b.amt = E(player.pointUpg[x])
-            player.pointUpg[x] = undefined;
+        if (b.amt.lte(0) && player.massUpg[x] && Decimal.gt(player.massUpg[x],0)) {
+            b.amt = E(player.massUpg[x])
+            player.massUpg[x] = undefined;
         }
 
-        b.auto = b.auto || player.autoPointUpg[x]
+        b.auto = b.auto || player.autoMassUpg[x]
 
-        player.autoPointUpg[x] = false
+        player.autoMassUpg[x] = false
     }
-*/
+
+    // Tickspeed
+    b = player.build.tickspeed
+    if (b.amt.lte(0) && player.tickspeed && Decimal.gt(player.tickspeed,0)) {
+        b.amt = E(player.tickspeed)
+        player.tickspeed = undefined;
+    }
+    b.auto = b.auto || player.autoTickspeed
+    player.autoTickspeed = false
+
+    // Accelerator
+    b = player.build.accelerator
+    if (b.amt.lte(0) && player.accelerator && Decimal.gt(player.accelerator,0)) {
+        b.amt = E(player.accelerator)
+        player.accelerator = undefined;
+    }
+    b.auto = b.auto || player.autoAccel
+    player.autoAccel = false
+
+    // BHC
+    b = player.build.bhc
+    if (b.amt.lte(0) && player.bh.condenser && Decimal.gt(player.bh.condenser,0)) {
+        b.amt = E(player.bh.condenser)
+        player.bh.condenser = undefined;
+    }
+    b.auto = b.auto || player.bh.autoCondenser
+    player.bh.autoCondenser = false
+
+    // FVM
+    b = player.build.fvm
+    if (b.amt.lte(0) && player.bh.fvm && Decimal.gt(player.bh.fvm,0)) {
+        b.amt = E(player.bh.fvm)
+        player.bh.fvm = undefined;
+    }
+    b.auto = b.auto || player.bh.autoFVM
+    player.bh.autoFVM = false
+
+    // Cosmic Ray
+    b = player.build.cosmic_ray
+    if (b.amt.lte(0) && player.atom.gamma_ray && Decimal.gt(player.atom.gamma_ray,0)) {
+        b.amt = E(player.atom.gamma_ray)
+        player.atom.gamma_ray = undefined;
+    }
+    b.auto = b.auto || player.atom.auto_gr
+    player.atom.auto_gr = false
+
+    // Star Booster
+    b = player.build.star_booster
+    if (b.amt.lte(0) && player.stars.boost && Decimal.gt(player.stars.boost,0)) {
+        b.amt = E(player.stars.boost)
+        player.stars.boost = undefined;
+        b.auto = hasTree('qol4')
+    }
+
+    // Cosmic String
+    b = player.build.cosmic_string
+    if (b.amt.lte(0) && player.qu.cosmic_str && Decimal.gt(player.qu.cosmic_str,0)) {
+        b.amt = E(player.qu.cosmic_str)
+        player.qu.cosmic_str = undefined;
+    }
+    b.auto = b.auto || player.qu.auto_cr
+    player.qu.auto_cr = false
+
+    // Parallel Extruder
+    b = player.build.pe
+    if (b.amt.lte(0) && player.inf.pe && Decimal.gt(player.inf.pe,0)) {
+        b.amt = E(player.inf.pe)
+        player.inf.pe = undefined;
+    }*/
 }
