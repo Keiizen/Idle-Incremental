@@ -28,7 +28,7 @@ function setupHTML() {
 		let x = all[i]
 		tmp.el[x.id] = new Element(x)
 	}
-	/*BUILDINGS.setup()*/
+	BUILDINGS.setup()
     
 }
 
