@@ -28,7 +28,7 @@ const RESOURCES_DIS = {
     }
 
 }
-
+function hasUpgrade() {return false}
 function reset_res_btn(id) { RESOURCES_DIS[id].resetBtn() }
 
 function setupResourcesHTML() {
