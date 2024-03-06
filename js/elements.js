@@ -27,9 +27,7 @@ function navhide(opt) {
 
 
 function updateHTML() {
-	window.onerror = function(msg,url,lineNo,columnNo,error)  {
-		document.getElementById("test") = `${msg}<br>${url}<br>${lineNo}<br>${columnNo}br>${error}`
-	}
+	
 
 	tmp.mobile = window.innerWidth < 1200
 
