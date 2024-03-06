@@ -2,6 +2,7 @@ const UPGS = {
    
     main: {
         temp() {
+            if (!tmp.upgs.main) tmp.upgs.main = {}
             for (let x = 1; x <= this.cols; x++) {
                 for (let y = 1; y <= this[x].lens; y++) {
                     let u = this[x][y]
