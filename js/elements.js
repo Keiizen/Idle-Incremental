@@ -3,7 +3,7 @@ function setupHTML() {
 	let table = ""
 	
 	
-	//document.getElementById("test").textContent = "No!"
+	document.getElementById("test").textContent = "No!"
 	setupResourcesHTML()
 	
 

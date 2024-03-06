@@ -34,18 +34,13 @@ function resetTemp() {
        
     }
 
-   // for (let x = 1; x < UPGS.main.cols; x++) tmp.upgs.main[x] = []
+   
     
     tmp.el = keep[0]
     tmp.prevSave = keep[1]
     tmp.notify = {}
 
-    /*for (let x in BUILDINGS_DATA) tmp.build[x] = {
-        bulk: E(0),
-		total: E(0),
-		bonus: E(0),
-        effect: {},
-    }*/
+
 }
 
 function updateSolarMatterTemp() {

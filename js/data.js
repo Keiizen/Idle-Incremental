@@ -119,7 +119,6 @@ function getPlayerData() {
                 1: true
             },
         },
-        main_upg_msg: [0,0],
         confirms: {},
         offline: {
             active: true,
