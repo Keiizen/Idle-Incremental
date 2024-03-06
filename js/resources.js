@@ -22,7 +22,7 @@ const RESOURCES_DIS = {
     },
     gamespeed: {
         unl: ()=>true,
-        icon: "time",
+        icon: "gamespeed",
         class: "orange",
         desc: (gs)=>formatMult(gs)+' gamespeed'
     }
