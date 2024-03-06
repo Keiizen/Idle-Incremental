@@ -40,9 +40,9 @@ const FORMS = {
         },
         doReset() {
            player.points=E(0)
-           for (let x = 1; x <= 1; x++) {
+           /*for (let x = 1; x <= 1; x++) {
             BUILDINGS.reset('points_'+x)
-           }
+           }*/
            player.sm.points = player.sm.points.add(tmp.sm.gain)
         }
     },

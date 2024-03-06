@@ -1,6 +1,6 @@
-/* BUILDINGS.JS: ORIGINAL BY AAREX AND MRREDSHARK77 */
+/* BUILDINGS.JS: ORIGINAL BY AAREX AND MRREDSHARK77*/
 
-const BUILDINGS_DATA = {
+/*const BUILDINGS_DATA = {
    
    
     /*
@@ -40,6 +40,7 @@ const BUILDINGS_DATA = {
         get_effect: x => formatMult(x.effect),
     },
     */
+   /*
    points_1: {
     name: "Empowerer",
     get isUnlocked() { return true },
@@ -291,4 +292,4 @@ function checkBuildings() {
         b.amt = E(player.inf.pe)
         player.inf.pe = undefined;
     }*/
-}
+//}

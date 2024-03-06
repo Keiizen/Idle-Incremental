@@ -20,7 +20,7 @@ function setupHTML() {
 		table += `</div><br><button id="main_upg_${x}_auto" class="btn" style="width: 80px;" onclick="player.auto_mainUpg.${id} = !player.auto_mainUpg.${id}">OFF</button></div>`
 	}
 	main_upgs_table.setHTML(table)*/
-	BUILDINGS.setup()
+	//BUILDINGS.setup()
 	
 	tmp.el = {}
 	let all = document.getElementsByTagName("*")
@@ -78,7 +78,7 @@ function updateHTML() {
 	tmp.el.tab_terminal.setDisplay(!player.options.hidenav[0])
 	tmp.el.app.setDisplay(tmp.start)
 	tmp.el.loading.setDisplay(!tmp.start)
-	for (let x = 1; x <= 1; x++) {
+	/*for (let x = 1; x <= 1; x++) {
 		BUILDINGS.update('points_'+x)
-	}
+	}*/
 }
