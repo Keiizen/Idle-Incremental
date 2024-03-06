@@ -40,9 +40,6 @@ const FORMS = {
         },
         doReset() {
            player.points=E(0)
-           /*for (let x = 1; x <= 1; x++) {
-            BUILDINGS.reset('points_'+x)
-           }*/
            player.sm.points = player.sm.points.add(tmp.sm.gain)
         }
     },
@@ -64,8 +61,7 @@ const FORMS = {
         }
     },
     gameSpeed() {
-        let gs = E(1)
-        gs = gs.add(player.points.pow(.05))
+        let gs = player.points.pow(.05)
         if (player.points.gte(1e100)) gs = gs.mul(player.points.div(1e100).pow(.1))
         return gs
     }

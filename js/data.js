@@ -126,22 +126,8 @@ function getPlayerData() {
             current: Date.now(),
             time: 0,
         },
-        mainUpg : {},
-        auto_mainUpg: {},
         time: 0,
         curtab: "main_tab",
-        pointUpg: {1:E(0),2:E(0),3:E(0)},
-        autoPointUpg: {1:false,2:false,3:false},
-        build: {}
-    }
-
-    /*for (let x in BUILDINGS_DATA) s.build[x] = {
-        amt: E(0),
-        auto: false,
-    }*/
-    for (let x = 1; x <= UPGS.main.cols; x++) {
-        s.auto_mainUpg[UPGS.main.ids[x]] = false
-        s.mainUpg[UPGS.main.ids[x]] = []
     }
 
     
@@ -162,7 +148,6 @@ function loadPlayer(load) {
     const DATA = getPlayerData()
     player = deepNaN(load, DATA)
     player = deepUndefinedAndDecimal(player, DATA)
-    //checkBuildings()
 }
 
 function clonePlayer(obj,data) {

@@ -59,10 +59,7 @@ function updateNullMatterTemp() {
     tmp.nm.can = tmp.gain.gte(1)
 }
 
-function updateUpgradesTemp() {
-    
-    UPGS.main.temp()
-}
+
 function updatePointTemp() {
     tmp.pointGain = FORMS.pointGain()
 }
@@ -76,7 +73,5 @@ function updateTemp() {
     updatePointTemp()
     updateSolarMatterTemp()
     updateNullMatterTemp()
-    updateUpgradesTemp()
-    //BUILDINGS.temp()
    
 }
