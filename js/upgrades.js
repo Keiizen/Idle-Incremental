@@ -25,6 +25,7 @@ const UPGS = {
                     player.points = player.points.sub(this[x].cost)
                     player.mainUpg.points.push(x)
                 }
+                
             },
             auto_unl() { return /*hasUpgrade('sm', 6)*/false},
             lens: 2,
