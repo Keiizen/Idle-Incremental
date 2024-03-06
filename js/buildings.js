@@ -98,6 +98,7 @@ const BUILDINGS = {
 		}
 	},
     temp() {
+        if (!tmp.build) tmp.build={}
 		let bt = tmp.build
 
 		for (var i of BUILDINGS_ORDER) {
