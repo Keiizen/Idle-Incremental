@@ -3,7 +3,7 @@ function setupHTML() {
 	let table = ""
 	
 	
-	document.getElementById("test").textContent = "No!"
+	//document.getElementById("test").textContent = "No!"
 	setupResourcesHTML()
 	
 
@@ -63,6 +63,9 @@ function navhide(opt) {
 }*/
 
 function updateHTML() {
+	window.onerror = function(msg,url,lineNo,columnNo,error)  {
+		document.getElementById("test") = `${msg}<br>${url}<br>${lineNo}<br>${columnNo}br>${error}`
+	}
 	//document.documentElement.style.setProperty('--font', player.options.font)
 	//document.documentElement.style.setProperty('--cx', tmp.cx)
 	//document.documentElement.style.setProperty('--cy', tmp.cy)
