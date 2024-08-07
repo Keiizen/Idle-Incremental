@@ -4,9 +4,9 @@ var player
 
 const ST_NAMES = [
 	null, [
-		["","U","D","T","Qa","Qt","Sx","Sp","Oc","No"],
-		["","Dc","Vg","Tg","Qag","Qtg","Sxg","Spg","Ocg","Nog"],
-		["","Ce","De","Te","Qae","Qte","Sxe","Spe","Oce","Noe"],
+		["","U","D","T","q","Q","s","S","O","N"],
+		["","d","Vg","Tg","qg","Qg","sgg","Sg","Og","Ng"],
+		["","Ct","Du","Tr","Qa","Qi","Se","Si","Ot","Ni"],
        // ["","U","D","T","q","Q","s","S","O","N"],
        // ["","De","V","Tr","QU","qu","Se","Sp","Og","No"],
        // ["","C","DC","TC","qC","QC","sC","SC","OC","NC"]
