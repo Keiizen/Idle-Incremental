@@ -42,7 +42,6 @@ function resetTemp() {
 
 
 }
-
 function updateSolarMatterTemp() {
     if (!tmp.sm) tmp.sm = {}
     tmp.sm.gain = FORMS.sm.gain()
@@ -51,9 +50,7 @@ function updateSolarMatterTemp() {
 function updateNullMatterTemp() {
     if (!tmp.nm) tmp.nm = {}
     tmp.nm.gain = FORMS.nm.gain()
-    
-    tmp.nm.can = tmp.nm.gain.gte(1)
-    
+    tmp.nm.can = tmp.nm.gain.gte(1)   
 }
 
 
