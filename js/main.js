@@ -238,6 +238,12 @@ function capitalFirst(str) {
 }
 
 
+
+
+
+
+
+
 setInterval(()=>{
     player.points = player.points.add(tmp.pointGain.mul(tmp.gs).div(16))
     
