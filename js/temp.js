@@ -51,7 +51,9 @@ function updateSolarMatterTemp() {
 function updateNullMatterTemp() {
     if (!tmp.nm) tmp.nm = {}
     tmp.nm.gain = FORMS.nm.gain()
+    
     tmp.nm.can = tmp.nm.gain.gte(1)
+    
 }
 
 
